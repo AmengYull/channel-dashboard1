@@ -1,0 +1,94 @@
+name: Build and Deploy Dashboard
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - '渠道数据.xlsx'
+      - '拓展线索.xlsx'
+      - 'generate_js.py'
+      - 'dashboard.html'
+      - '.github/workflows/**'
+  schedule:
+    # 每天凌晨2点自动构建（可选）
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # 支持手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install openpyxl pandas
+        
+    - name: Generate data.js
+      run: python generate_js.py
+      
+    - name: Update timestamp
+      run: |
+        TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+        sed -i "s/数据更新时间：.*$/数据更新时间：$TIMESTAMP/" dashboard.html || true
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dashboard-build
+        path: |
+          .
+          !.git
+          !.github
+          !__pycache__
+          !*.pyc
+
+  deploy-vercel:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dashboard-build
+        
+    - name: Deploy to Vercel
+      uses: vercel/action-deploy@v1
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        working-directory: ./
+
+  deploy-netlify:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dashboard-build
+        
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v3.0
+      with:
+        publish-dir: './'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
