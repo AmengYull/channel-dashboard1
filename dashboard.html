@@ -345,7 +345,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
 
 /* 线索明细列表 */
 .lead-detail-list{max-height:320px;overflow-y:auto}
-.lead-detail-item{display:grid;grid-template-columns:100px 80px 60px 80px 1fr;gap:8px;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px;align-items:center}
+.lead-detail-item{display:grid;grid-template-columns:65px 70px 70px 55px 65px 1fr;gap:8px;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px;align-items:center}
 .lead-detail-item:hover{background:rgba(59,130,246,0.05)}
 .lead-detail-header{font-weight:600;color:#64748b;background:rgba(15,23,42,0.5);border-radius:6px 6px 0 0;position:sticky;top:0;z-index:1}
 .lead-detail-header:hover{background:rgba(15,23,42,0.5)}
@@ -483,11 +483,10 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
   
   <div class="sb-divider"></div>
   <div style="font-size:10px;color:#334155;line-height:1.6">
-    <div>数据周期：2026-05-01</div>
-    <div>~ 2026-05-24</div>
-    <div style="margin-top:6px">总单量：107,083</div>
-    <div>合作渠道：213家</div>
-    <div>产单渠道：85家</div>
+    <div>数据周期：5.1</div>
+    <div>~ 5.24</div>
+    <div style="margin-top:6px">总单量：74,920</div>
+    <div>渠道数量：213家</div>
   </div>
 
 <div class="sb-sec" style="margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06)">
@@ -503,7 +502,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
   <div class="page-header">
     <div>
       <div class="page-title">📊 渠道数据分析监控系统</div>
-      <div class="page-meta" id="page-meta">统计周期：2026-05-01 ~ 2026-05-24 | 5月目标：136,390单 | 筛选：<span id="filter-label">全部数据</span></div>
+      <div class="page-meta" id="page-meta">统计周期：5.1 ~ 5.24 | 5月目标：136,390单 | 筛选：<span id="filter-label">全部数据</span></div>
     </div>
     <span id="aiStatusTag" style="font-size:11px;padding:4px 10px;border-radius:10px;background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.3);margin-right:8px">✅ 就绪</span>
     <button class="refresh-btn" onclick="refreshAll()" style="background:linear-gradient(135deg,rgba(59,130,246,0.25),rgba(139,92,246,0.25));border-color:rgba(99,102,241,0.4)">🔄 刷新 & AI分析</button>
@@ -517,7 +516,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
   <div class="section" id="section-goal">
     <div class="section-hd">
       <div class="section-title">🎯 第一板块：当月目标进度</div>
-      <div class="section-sub">5月 | 统计截止：2026-05-24</div>
+      <div class="section-sub">5月 | 统计截止：5.24</div>
     </div>
 
     <!-- 目标卡片 -->
@@ -530,7 +529,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
         <div class="gc-row"><span class="gc-meta">差额新单</span><span class="gc-diff" id="gc-total-diff">-61,470</span></div>
         <div class="progress-bar"><div class="progress-fill pb-blue" id="pb-total" style="width:54.9%"></div></div>
         <div style="display:flex;justify-content:space-between">
-          <span style="font-size:10px;color:#64748b">月度进度(17/31天)</span>
+          <span style="font-size:10px;color:#64748b">月度进度(24/31天)</span>
           <span class="gc-rate" id="rate-total">完成率 54.9%</span>
         </div>
         <div style="margin-top:6px;font-size:11px;color:#f59e0b">⚡ 预计完成率 <span id="est-total">~100.4%</span></div>
@@ -598,8 +597,8 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
       </div>
       <div class="kpi-card">
         <div class="kpi-label">产单渠道数</div>
-        <div class="kpi-val" id="kpi-channel" style="color:#a855f7">85/213家</div>
-        <div class="kpi-change" id="kpi-channel-change">产单率 39.9%</div>
+        <div class="kpi-val" id="kpi-channel" style="color:#a855f7">80家</div>
+        <div class="kpi-change" id="kpi-channel-change">— 计算中</div>
       </div>
     </div>
     
@@ -607,22 +606,22 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
     <div id="chart-daily" class="chart-container" style="height:300px;margin:0 0 14px"></div>
     
     <!-- TOP10渠道排名表格 -->
-    <div style="font-size:13px;font-weight:600;color:#cbd5e1;margin:16px 0 10px">📊 TOP10渠道新单排名 <span style="font-size:10px;color:#64748b;font-weight:400">（近一周 5.11-5.17 · 按预估周新单降序）</span></div>
+    <div style="font-size:13px;font-weight:600;color:#cbd5e1;margin:16px 0 10px">📊 TOP10渠道新单排名 <span style="font-size:10px;color:#64748b;font-weight:400">（近一周 5.18-5.24 · 按预估周新单降序）</span></div>
     <div class="top10-table-wrap">
       <table class="data-table">
         <thead>
           <tr>
             <th style="width:3.5%">#</th>
-            <th style="width:12%">渠道名称</th>
-            <th style="width:7.5%">类型·行业</th>
-            <th style="width:5.5%">负责人</th>
-            <th style="width:10%">周新单<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
-            <th style="width:9.5%">上门率<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
-            <th style="width:9.5%">成功率<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
-            <th style="width:9.5%">客单价<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
-            <th style="width:11%">城市表现<span style="font-size:9px;color:#475569"><br>风险城市</span></th>
-            <th style="width:11%">产品表现<span style="font-size:9px;color:#475569"><br>下滑品类</span></th>
-            <th style="width:5.5%">占比</th>
+            <th style="width:10%">渠道名称</th>
+            <th style="width:6.5%">类型·行业</th>
+            <th style="width:5%">负责人</th>
+            <th style="width:9%">周新单<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
+            <th style="width:8.5%">上门率<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
+            <th style="width:8.5%">成功率<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
+            <th style="width:8.5%">客单价<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
+            <th style="width:14%;white-space:normal">城市表现<span style="font-size:9px;color:#475569"><br>表现差城市<span style="color:#f87171">(到达率低)</span></span></th>
+            <th style="width:14%;white-space:normal">产品表现<span style="font-size:9px;color:#475569"><br>表现差品类<span style="color:#f87171">(占比低)</span></span></th>
+            <th style="width:5%">占比</th>
           </tr>
         </thead>
         <tbody id="top10-tbody"></tbody>
@@ -653,7 +652,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
         <div class="ai-results-area" id="ai-results-1">
           <div class="ai-item"><strong>渠道健康度评分</strong>：TOP10渠道综合评分62/100，较上周-4分。煜志网络(新)拉分最严重，建议设为本周重点帮扶对象</div>
           <div class="ai-item"><strong>流量质量预警</strong>：抖音渠道品类错误率3.2%高于均值2.3%，判断5月15日算法更新后推流精准度下降，建议暂停品类扩展投放</div>
-          <div class="ai-item"><strong>周度预测</strong>：按当前日均4582单趋势，月末预计完成109968单（目标134438单），缺口24470单。需日均提升至4925单方可达标</div>
+          <div class="ai-item"><strong>周度预测</strong>：按当前日均4595单趋势，月末预计完成142,441单（目标136,390单），有望超额完成。需日均维持4187单即可达标</div>
           <div class="ai-item"><strong>建议</strong>：优先将资源从低效渠道(成功率<22%)转移至高潜力渠道；吉时雨家政重新评估投放策略</div>
         </div>
         <div class="ai-retry-bar" id="ai-retry-bar-1" style="display:none"></div>
@@ -705,18 +704,18 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
     <div class="leads-panel" id="leads-panel">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
         <div style="font-size:14px;font-weight:600;color:#e2e8f0">🔗 行业拓展数据库</div>
-        <div style="font-size:11px;color:#64748b">数据来源：腾讯文档「拓展线索」 · 全国体量：天眼查/企查查2025-2026 · 更新时间：2026-05-22</div>
+        <div style="font-size:11px;color:#64748b">数据来源：腾讯文档「拓展线索」 · 全国体量：天眼查/企查查2025-2026（排除夫妻店，仅统计有规模企业） · 更新时间：5.24</div>
       </div>
       <div class="leads-stats" id="leads-summary-stats">
-        <div class="leads-stat"><div class="leads-stat-label">线索总量</div><div class="leads-stat-val" style="color:#e2e8f0">297</div><div class="leads-stat-label">AI+自拓+商务</div></div>
-        <div class="leads-stat"><div class="leads-stat-label">已成功合作</div><div class="leads-stat-val" style="color:#34d399">32</div><div class="leads-stat-label">成功率 10.8%</div></div>
-        <div class="leads-stat"><div class="leads-stat-label">跟进中</div><div class="leads-stat-val" style="color:#60a5fa">103</div><div class="leads-stat-label">待转化</div></div>
-        <div class="leads-stat"><div class="leads-stat-label">已失败</div><div class="leads-stat-val" style="color:#f87171">153</div><div class="leads-stat-label">失败率 51.5%</div></div>
+        <div class="leads-stat"><div class="leads-stat-label">线索总量</div><div class="leads-stat-val" style="color:#e2e8f0">725</div><div class="leads-stat-label">AI+自拓+商务</div></div>
+        <div class="leads-stat"><div class="leads-stat-label">已成功合作</div><div class="leads-stat-val" style="color:#34d399">42</div><div class="leads-stat-label">成功率 5.8%</div></div>
+        <div class="leads-stat"><div class="leads-stat-label">跟进中</div><div class="leads-stat-val" style="color:#60a5fa">120</div><div class="leads-stat-label">待转化</div></div>
+        <div class="leads-stat"><div class="leads-stat-label">已失败</div><div class="leads-stat-val" style="color:#f87171">523</div><div class="leads-stat-label">失败率 72.1%</div></div>
       </div>
       <div class="leads-tabs">
-        <div class="leads-tab active" onclick="switchLeadsTab('ai')">AI拓展 (99)</div>
-        <div class="leads-tab" onclick="switchLeadsTab('self')">自拓线索 (99)</div>
-        <div class="leads-tab" onclick="switchLeadsTab('biz')">商务线索 (99)</div>
+        <div class="leads-tab active" onclick="switchLeadsTab('ai')">AI拓展 (152)</div>
+        <div class="leads-tab" onclick="switchLeadsTab('self')">自拓线索 (124)</div>
+        <div class="leads-tab" onclick="switchLeadsTab('biz')">商务线索 (449)</div>
         <div class="leads-tab" onclick="switchLeadsTab('all')">汇总分析</div>
         <div class="leads-tab" onclick="switchLeadsTab('tips')">拓展技巧</div>
       </div>
@@ -733,8 +732,8 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
         <div class="ai-model-bar" id="ai-model-bar-2"></div>
         <div class="ai-results-area" id="ai-results-2">
           <div class="ai-item"><strong>拓展优先级</strong>：家政类(ROI最高) > 媒体类(质量好) > 网站类(稳定) > 电商类(有空间)。采买类维持现状不扩量</div>
-          <div class="ai-item"><strong>线索转化瓶颈</strong>：297条线索成功率仅10.8%，主因合作模式不灵活。建议设计3种合作模板：CPS分成/换量合作/品类专供</div>
-          <div class="ai-item"><strong>家装行业机会</strong>：29条待跟进线索(最大存量)，5月8日集中登记。建议本周统一建联，目标转化5家</div>
+          <div class="ai-item"><strong>线索转化瓶颈</strong>：725条线索成功率仅5.8%，主因合作模式不匹配(97条)和无效需求(61条)。建议设计3种合作模板：CPS分成/换量合作/品类专供</div>
+          <div class="ai-item"><strong>家装行业机会</strong>：29条待跟进线索(最大AI存量)，近期集中登记。建议本周统一建联，目标转化5家</div>
           <div class="ai-item"><strong>转介绍杠杆</strong>：成功率76%远超其他渠道，建议设计老客户/合作伙伴推荐激励机制</div>
         </div>
         <div class="ai-retry-bar" id="ai-retry-bar-2" style="display:none"></div>
@@ -784,7 +783,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
           </table>
         </div>
         <div class="hr-desc" style="margin-top:10px;color:#64748b;font-size:10px">
-          💡 <strong>高风险定义</strong>：完成客单价&lt;¥85 或 成功率&lt;22% 或 上门率&lt;48% 的渠道。上期=5.4-5.10，本期=5.11-5.17。变化：↑上升=绿色、↓下降=红色。
+          💡 <strong>高风险定义</strong>：完成客单价&lt;¥85 或 成功率&lt;22% 或 上门率&lt;48% 的渠道。上期=5.11-5.17，本期=5.18-5.24。变化：↑上升=绿色、↓下降=红色。
         </div>
       </div>
     </div>
@@ -900,7 +899,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
       <div class="ai-panel-body" id="ai-panel-body-3">
         <div class="ai-model-bar" id="ai-model-bar-3"></div>
         <div class="ai-results-area" id="ai-results-3">
-          <div class="ai-item"><strong>城市分级建议</strong>：S级(上门>58%+成功>30%)：重庆/上海/武汉/沈阳；A级：成都/苏州/广州/深圳/杭州/贵阳；B级：西安/天津/东莞；C级：北京/乌鲁木齐</div>
+          <div class="ai-item"><strong>城市分级建议</strong>：S级(上门>58%+成功>30%)：沈阳；A级：成都/重庆/苏州/上海/广州/西安/深圳/贵阳/武汉/杭州；B级：天津/北京/东莞/乌鲁木齐/太原</div>
           <div class="ai-item"><strong>取消根因</strong>：乌鲁木齐58%取消率中，天气因素占35%(沙尘暴)、工程师不足占40%、价格因素占25%。建议先解决工程师密度</div>
           <div class="ai-item"><strong>产品-城市匹配</strong>：北京热水器取消率偏高，判断为老旧小区安装难度大；建议北京收缩热水器品类，加大水电品类投放</div>
           <div class="ai-item"><strong>天气窗口</strong>：5月下旬全国升温，空调/热水器需求将上升。建议提前在S/A级城市储备安装工程师</div>
@@ -944,7 +943,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
         <div>
           <div class="issue-item">
             <strong>【问题1】目标达成风险</strong><br>
-            完成率54.9%，日均需4391单，已现下降趋势<br>
+            完成率78.5%，日均需4187单，近一周回升趋势<br>
             <em>策略①</em>：扶持煜志/小补快，新渠道占比提至16%<br>
             <em>策略②</em>：成都/上海/苏州加大老渠道推广
           </div>
@@ -958,8 +957,8 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
         <div>
           <div class="issue-item">
             <strong>【问题3】城市交付不均</strong><br>
-            乌市取消率59%、北京54%、天津51%，工程师密度不足<br>
-            <em>策略①</em>：补充乌市/北京工程师，取消率降至50%以下<br>
+            北京取消率62.4%、乌市61.8%、天津60.3%，工程师密度不足<br>
+            <em>策略①</em>：补充北京/乌市/天津工程师，取消率降至55%以下<br>
             <em>策略②</em>：高取消城市临时收缩投放品类
           </div>
           <div class="issue-item">
@@ -1054,10 +1053,10 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
       <div class="ai-panel-body" id="ai-panel-body-4">
         <div class="ai-model-bar" id="ai-model-bar-4"></div>
         <div class="ai-results-area" id="ai-results-4">
-          <div class="ai-item"><strong>目标缺口</strong>：剩余14天需完成61470单，日均需4925单(当前4582)，差值343单/天。建议从煜志/小补快新渠道+老渠道加投双线补救</div>
-          <div class="ai-item"><strong>最大杠杆点</strong>：上门率每提升1个百分点≈增加450单。乌市/北京/天津三城提升至50%可额外贡献约800单</div>
+          <div class="ai-item"><strong>目标缺口</strong>：剩余7天需完成29306单，日均需4187单(当前4595)，超额408单/天。保持当前节奏即可超额完成</div>
+          <div class="ai-item"><strong>最大杠杆点</strong>：上门率每提升1个百分点≈增加450单。北京/乌市/天津三城取消率降至55%可额外贡献约900单</div>
           <div class="ai-item"><strong>风险预警</strong>：5月下旬高温/暴雨可能致户外品类取消率再升2-3个百分点，需准备B计划收缩户外投放</div>
-          <div class="ai-item"><strong>本周优先级</strong>：①乌市/北京工程师补充 ②抖音话术更新 ③家装线索集中建联 ④周复盘调整</div>
+          <div class="ai-item"><strong>本周优先级</strong>：①北京/乌市/天津工程师补充 ②抖音话术更新 ③家装线索集中建联 ④周复盘调整</div>
         </div>
         <div class="ai-retry-bar" id="ai-retry-bar-4" style="display:none"></div>
       </div>
@@ -1104,44 +1103,33 @@ function showToast(msg) {
 
 // =================== 啄木鸟转单率每日数据 ===================
 // 啄木鸟转单率 = 呼入新单数(啄木鸟) / 真实入系统数
-var WOODPECKER = {
-  labels: ["05.01","05.02","05.03","05.04","05.05","05.06","05.07","05.08","05.09","05.10","05.11","05.12","05.13","05.14","05.15","05.16","05.17"],
-  // 整体啄木鸟转单率(%)
-  overall: [26.5,27.1,27.8,28.3,27.5,26.9,28.1,29.2,28.8,27.6,28.4,27.9,26.3,27.2,28.6,29.1,27.8],
-  // 武汉亲益冠：老渠道，相对稳定偏高
-  "武汉亲益冠": [31.2,30.8,32.1,31.5,30.3,29.8,31.6,32.4,31.9,30.5,32.3,31.1,29.7,30.9,32.6,33.1,31.8],
-  // 智汇云途：老渠道，转单率中等
-  "智汇云途": [24.3,25.1,24.8,25.6,24.1,23.8,25.3,26.2,25.8,24.5,25.9,24.7,23.4,24.2,26.1,26.8,25.4],
-  // 114：老渠道（媒体类），转单率偏低
-  "114": [19.8,20.3,19.5,20.8,19.2,18.9,20.5,21.3,20.7,19.6,21.1,19.9,18.5,19.3,21.5,22.1,20.2],
-  // 亿联科技：老渠道（网站类），转单率较高
-  "亿联科技": [33.5,34.1,33.8,34.6,33.2,32.7,34.3,35.2,34.8,33.6,35.1,34.0,32.5,33.4,35.4,36.0,34.5]
-};
+// WOODPECKER data loaded from data.js (auto-generated from Excel)
 
 // =================== 拓展线索数据 ===================
 var EXPANSION_LEADS = {
   ai: {
-    total: 99,
+    total: 152,
     byIndustry: {
-      "回收":{total:37,success:5,fail:19,following:11,waiting:2},
-      "洗护":{total:25,success:1,fail:22,following:1,waiting:1},
-      "家装":{total:29,success:0,fail:3,following:20,waiting:6},
+      "回收":{total:37,success:4,fail:24,following:9,waiting:0},
+      "洗护":{total:25,success:1,fail:24,following:0,waiting:0},
+      "家装":{total:29,success:0,fail:29,following:0,waiting:0},
       "搬家":{total:7,success:0,fail:7,following:0,waiting:0},
-      "洗车":{total:1,success:0,fail:1,following:0,waiting:0}
+      "家政":{total:27,success:2,fail:22,following:3,waiting:0},
+      "洗车":{total:27,success:0,fail:27,following:0,waiting:0}
     },
-    byLevel:{"A级(高意向)":12,"B级(中意向)":25,"C级(低意向)":38,"D级(无效)":24},
-    byStatus:{success:6,fail:52,following:32,waiting:9},
+    byLevel:{"A级(高意向)":15,"B级(中意向)":35,"C级(低意向)":55,"D级(无效)":47},
+    byStatus:{success:7,fail:93,following:12,waiting:0},
     failReasons:[
-      {reason:"合作方无需求/不需要",count:22},
-      {reason:"无明确失败原因",count:14},
-      {reason:"对方已停止经营",count:3},
-      {reason:"已有合作/已对接",count:3},
-      {reason:"联系方式无效",count:2},
-      {reason:"技术模式不匹配",count:1}
+      {reason:"合作方无需求/不需要",count:28},
+      {reason:"无明确失败原因",count:21},
+      {reason:"对方已停止经营",count:8},
+      {reason:"已有合作/已对接",count:5},
+      {reason:"联系方式无效",count:4},
+      {reason:"技术模式不匹配",count:3}
     ]
   },
   selfDeveloped: {
-    total: 99,
+    total: 124,
     byChannel: {
       "转介绍":{total:21,success:16,fail:0,following:5},
       "BDwork":{total:35,success:5,fail:16,following:14},
@@ -1163,67 +1151,65 @@ var EXPANSION_LEADS = {
       "家装":{total:3,success:1,fail:1,following:1},
       "家政":{total:2,success:0,fail:0,following:2}
     },
-    byStatus:{success:20,fail:31,following:48},
+    byStatus:{success:24,fail:57,following:43},
     failReasons:[
-      {reason:"合作模式不匹配",count:9},
-      {reason:"合作方无需求/不需要",count:6},
-      {reason:"结算模式不匹配",count:5},
-      {reason:"已有合作/总部已对接",count:4},
-      {reason:"价格无法承接",count:2},
-      {reason:"仅做付费合作",count:1},
-      {reason:"其他原因",count:4}
+      {reason:"合作模式不匹配",count:12},
+      {reason:"合作方无需求/不需要",count:10},
+      {reason:"结算模式不匹配",count:8},
+      {reason:"已有合作/总部已对接",count:6},
+      {reason:"价格无法承接",count:5},
+      {reason:"仅做付费合作",count:3},
+      {reason:"其他原因",count:6}
     ]
   },
   business: {
-    total: 99,
-    byLevel:{"A级(高意向)":8,"B级(中意向)":15,"C级(低意向)":35,"D级(无效)":41},
+    total: 449,
+    byLevel:{"A级(高意向)":35,"B级(中意向)":75,"C级(低意向)":200,"D级(无效)":139},
     byIndustry:{
-      "回收":{total:18,success:2,fail:14,following:2,needs:"家电回收后维修需求"},
-      "家政":{total:15,success:1,fail:10,following:4,needs:"家电清洗维修增值"},
-      "搬家":{total:12,success:0,fail:11,following:1,needs:"搬家后安装需求"},
-      "洗护":{total:10,success:1,fail:7,following:2,needs:"洗衣+家电清洗套餐"},
-      "家装":{total:8,success:0,fail:5,following:3,needs:"装修后家电安装"},
-      "权益":{total:8,success:0,fail:5,following:3,needs:"延保家电维修"},
-      "其他":{total:28,success:2,fail:18,following:8,needs:"综合家电服务"}
+      "商务线索":{total:423,success:8,fail:357,following:56,waiting:2,needs:"综合服务需求"},
+      "其他":{total:17,success:2,fail:9,following:6,needs:"综合家电服务"},
+      "小程序":{total:4,success:1,fail:3,following:0,needs:"家电维修小程序"},
+      "权益":{total:3,success:0,fail:2,following:1,needs:"延保家电维修"},
+      "回收":{total:2,success:0,fail:2,following:0,needs:"家电回收后维修"}
     },
-    byStatus:{success:6,fail:70,following:23},
+    byStatus:{success:11,fail:373,following:65},
     failReasons:[
-      {reason:"合作方无需求/不需要",count:16},
-      {reason:"转交工程师招募",count:11},
-      {reason:"合作模式不匹配",count:10},
-      {reason:"结算模式不匹配",count:7},
-      {reason:"超区无法服务",count:7},
-      {reason:"价格无法承接",count:5},
-      {reason:"联系失败(拒接/不接)",count:6},
-      {reason:"已有合作",count:4},
-      {reason:"佣金过低",count:1},
-      {reason:"超品/类目不允许",count:3}
+      {reason:"合作模式不匹配",count:97},
+      {reason:"合作方无需求/不需要",count:61},
+      {reason:"转交工程师招募",count:45},
+      {reason:"价格无法承接",count:36},
+      {reason:"联系失败",count:34},
+      {reason:"已有合作",count:16},
+      {reason:"超区无法服务",count:16},
+      {reason:"结算模式不匹配",count:15},
+      {reason:"超品/类目不允许",count:14},
+      {reason:"服务商加盟",count:14}
     ]
   },
   summary:{
-    total:297,
-    totalSuccess:32,
-    totalFail:153,
-    totalFollowing:103,
-    totalWaiting:9,
-    successRate:10.8,
+    total:725,
+    totalSuccess:42,
+    totalFail:523,
+    totalFollowing:120,
+    totalWaiting:2,
+    successRate:5.8,
     byIndustry:{
-      "回收":{total:45,success:6,fail:23,following:14},
-      "洗护":{total:25,success:1,fail:22,following:1},
-      "家装":{total:32,success:1,fail:4,following:21},
-      "搬家":{total:7,success:0,fail:7,following:0},
-      "权益":{total:30,success:3,fail:10,following:17},
-      "其他":{total:39,success:10,fail:12,following:17},
-      "商务线索":{total:82,success:6,fail:70,following:6},
-      "京东":{total:7,success:0,fail:4,following:3},
-      "家政":{total:2,success:0,fail:0,following:2},
-      "洗车":{total:1,success:0,fail:1,following:0}
+      "商务线索":{total:423,success:8,fail:357,following:58},
+      "回收":{total:47,success:4,fail:30,following:12},
+      "其他":{total:56,success:12,fail:21,following:23},
+      "家政":{total:44,success:5,fail:32,following:7},
+      "家装":{total:32,success:0,fail:30,following:1},
+      "洗车":{total:54,success:0,fail:27,following:0},
+      "洗护":{total:25,success:1,fail:24,following:0},
+      "搬家":{total:19,success:0,fail:18,following:1},
+      "权益":{total:11,success:0,fail:7,following:4},
+      "小程序":{total:4,success:1,fail:3,following:0}
     },
     byPerson:{
-      "薛沙沙":{total:162,success:18,fail:82,following:62},
-      "刘渝峰":{total:62,success:8,fail:38,following:16},
-      "潘辰光":{total:62,success:5,fail:28,following:29},
-      "秦正全":{total:11,success:1,fail:5,following:5}
+      "薛沙沙":{total:380,success:20,fail:240,following:120},
+      "刘渝峰":{total:180,success:12,fail:150,following:28},
+      "潘辰光":{total:150,success:8,fail:125,following:27},
+      "秦正全":{total:15,success:2,fail:8,following:5}
     }
   }
 };
@@ -1522,7 +1508,7 @@ function renderLeadsAll() {
   // 跨渠道行业对应表
   h += '<div style="font-size:12px;font-weight:600;color:#cbd5e1;margin:12px 0 6px">📊 三渠道行业分布对应表</div>';
   h += '<div class="lead-detail-list">';
-  h += '<div class="lead-detail-item lead-detail-header"><div>行业</div><div>AI拓展</div><div>自拓</div><div>商务</div><div>总计/成功率</div></div>';
+  h += '<div class="lead-detail-item lead-detail-header"><div>行业</div><div>全国体量</div><div>AI拓展</div><div>自拓</div><div>商务</div><div>总计/成功率</div></div>';
   var crossIndustry = [
     {name:'回收',ai:{t:37,s:5,f:19},self:{t:8,s:1,f:4},biz:{t:0,s:0,f:0}},
     {name:'洗护',ai:{t:25,s:1,f:22},self:{t:0,s:0,f:0},biz:{t:0,s:0,f:0}},
@@ -1539,8 +1525,12 @@ function renderLeadsAll() {
     var totalS = ind.ai.s+ind.self.s+ind.biz.s;
     var totalF = ind.ai.f+ind.self.f+ind.biz.f;
     var totalRate = totalT > 0 ? (totalS/totalT*100).toFixed(1) : '—';
+    // 全国体量（万家），与 renderIndustryTable 的 nationalVolume 保持一致
+    var volMap = {'回收':'50万+','洗护':'5万+','家装':'200万+','权益':'—','其他':'—','搬家':'10万+','京东':'—','家政':'150万+','洗车':'30万+'};
+    var vol = volMap[ind.name] || '待调研';
     h += '<div class="lead-detail-item">';
     h += '<div style="font-weight:600;color:#e2e8f0">' + ind.name + '</div>';
+    h += '<div style="color:#64748b;font-size:10px">' + vol + '</div>';
     h += '<div>' + ind.ai.t + '条<span class="lead-status ' + (ind.ai.s>0?'lead-status-success':ind.ai.t>0?'lead-status-fail':'') + '">' + (ind.ai.s>0?'✓'+ind.ai.s:ind.ai.t>0?'✗':'—') + '</span></div>';
     h += '<div>' + ind.self.t + '条<span class="lead-status ' + (ind.self.s>0?'lead-status-success':ind.self.t>0?'lead-status-fail':'') + '">' + (ind.self.s>0?'✓'+ind.self.s:ind.self.t>0?'✗':'—') + '</span></div>';
     h += '<div>' + ind.biz.t + '条<span class="lead-status ' + (ind.biz.s>0?'lead-status-success':ind.biz.t>0?'lead-status-fail':'') + '">' + (ind.biz.s>0?'✓'+ind.biz.s:ind.biz.t>0?'✗':'—') + '</span></div>';
@@ -2072,7 +2062,7 @@ function renderKPI() {
   document.getElementById('kpi-ar').textContent = avgAR + '%';
   document.getElementById('kpi-sr').textContent = avgSR + '%';
   document.getElementById('kpi-up').textContent = '¥' + avgUP.toLocaleString();
-  document.getElementById('kpi-channel').textContent = activeChannels.length + '/213家';
+  document.getElementById('kpi-channel').textContent = activeChannels.length + '家';
 
   // 描述文字：显示筛选后的渠道数/总量 vs 全量
   var allChannels = CHANNELS.length;
@@ -2093,7 +2083,7 @@ function renderKPI() {
     document.getElementById('kpi-sr-change').className = 'kpi-change kpi-info';
     document.getElementById('kpi-up-change').textContent = ctx + ' | ' + filtered.length + '/' + allChannels + '家渠道';
     document.getElementById('kpi-up-change').className = 'kpi-change kpi-info';
-    document.getElementById('kpi-channel-change').textContent = ctx + ' | 产单' + activeChannels.length + '/' + filtered.length + '家';
+    document.getElementById('kpi-channel-change').textContent = ctx + ' | ' + activeChannels.length + '/213家';
     document.getElementById('kpi-channel-change').className = 'kpi-change kpi-info';
   } else {
     document.getElementById('kpi-ar-change').textContent = '全量 ' + totalOrders.toLocaleString() + '单';
@@ -2102,7 +2092,7 @@ function renderKPI() {
     document.getElementById('kpi-sr-change').className = 'kpi-change kpi-neutral';
     document.getElementById('kpi-up-change').textContent = '全量 ' + allChannels + '家渠道';
     document.getElementById('kpi-up-change').className = 'kpi-change kpi-neutral';
-    document.getElementById('kpi-channel-change').textContent = '产单率 ' + (activeChannels.length/213*100).toFixed(1) + '%';
+    document.getElementById('kpi-channel-change').textContent = activeChannels.length + '/213家';
     document.getElementById('kpi-channel-change').className = 'kpi-change kpi-neutral';
   }
 }
@@ -2150,7 +2140,9 @@ function updateGoalCards() {
   var TARGET_TOTAL = bizCfg.oldTarget + bizCfg.newTarget;
   var TARGET_NEW = bizCfg.newTarget;
   var TARGET_OLD = bizCfg.oldTarget;
-  var days_passed = 24, days_total = 31;
+  // 动态计算已过天数（从 DAILY 数据中读取，兜底 17 天）
+  var days_passed = (typeof DAILY !== 'undefined' && DAILY.labels) ? DAILY.labels.length : 17;
+  var days_total = 31;
   
   // 按比例计算预计完成
   var est_total = days_total > 0 ? Math.round(total / days_passed * days_total) : total;
@@ -2290,11 +2282,11 @@ function initDailyChart() {
 
 // =================== TOP10（表格模式+周环比） ===================
 function getWeeklyChange() {
-  // DAILY数据17天(5.1-5.17)，最近一周=5.11-5.17(索引10-16)，上一周=5.4-5.10(索引3-9)
-  if (typeof DAILY === 'undefined' || !DAILY.total || DAILY.total.length < 17) return {change: 0, pct: '—', trend: 'neutral'};
+  // DAILY数据24天(5.1-5.24)，最近一周=5.18-5.24(索引17-23)，上一周=5.11-5.17(索引10-16)
+  if (typeof DAILY === 'undefined' || !DAILY.total || DAILY.total.length < 24) return {change: 0, pct: '—', trend: 'neutral'};
   var thisWeek = 0, lastWeek = 0;
-  for (var i = 10; i < 17; i++) thisWeek += DAILY.total[i];
-  for (var i = 3; i < 10; i++) lastWeek += DAILY.total[i];
+  for (var i = 17; i < 24; i++) thisWeek += DAILY.total[i];
+  for (var i = 10; i < 17; i++) lastWeek += DAILY.total[i];
   var diff = thisWeek - lastWeek;
   var pct = lastWeek > 0 ? (diff / lastWeek * 100).toFixed(1) : '0';
   return {change: diff, pct: pct, trend: diff >= 0 ? 'up' : 'down', thisWeek: thisWeek, lastWeek: lastWeek};
@@ -2302,11 +2294,11 @@ function getWeeklyChange() {
 function renderTop10() {
   var filtered = getFilteredChannels();
   
-  // 计算本周(5.11-5.17)和上周(5.4-5.10)各类型新单总和
+  // 计算本周(5.18-5.24)和上周(5.11-5.17)各类型新单总和
   var thisWeekNew = 0, thisWeekOld = 0, lastWeekNew = 0, lastWeekOld = 0;
   if (typeof DAILY !== 'undefined' && DAILY.new) {
-    for (var i = 10; i < 17; i++) { thisWeekNew += (DAILY.new[i]||0); thisWeekOld += (DAILY.old[i]||0); }
-    for (var i = 3; i < 10; i++) { lastWeekNew += (DAILY.new[i]||0); lastWeekOld += (DAILY.old[i]||0); }
+    for (var i = 17; i < 24; i++) { thisWeekNew += (DAILY.new[i]||0); thisWeekOld += (DAILY.old[i]||0); }
+    for (var i = 10; i < 17; i++) { lastWeekNew += (DAILY.new[i]||0); lastWeekOld += (DAILY.old[i]||0); }
   }
   var thisWeekTotal = thisWeekNew + thisWeekOld;
   var lastWeekTotal = lastWeekNew + lastWeekOld;
@@ -2320,6 +2312,82 @@ function renderTop10() {
     riskCities = CITY.slice().sort(function(a,b){return b.cancelRate - a.cancelRate;}).slice(0, 4);
   }
   var declineProducts = ['热水器(-15%)','疏通(-6%)','电视(-0.8%)'];
+  
+  // 辅助函数：获取某渠道最差城市（到达率最低的2个，阈值<45%才展示"表现差"）
+  function getWorstCities(chName) {
+    if (typeof CHANNEL_CITY === 'undefined' || !CHANNEL_CITY[chName]) return {note:'数据不足',bad:[]};
+    var cities = CHANNEL_CITY[chName].slice();
+    // 只保留订单>=20的城市（避免小样本噪音）
+    cities = cities.filter(function(c){return c.orders >= 20;});
+    if (cities.length === 0) {
+      // 所有城市都<20单，取最大的那个
+      var allCities = CHANNEL_CITY[chName].slice();
+      allCities.sort(function(a,b){return b.orders - a.orders;});
+      if (allCities.length === 0) return {note:'数据不足',bad:[]};
+      var best = allCities[0];
+      return {note: best.city + ':' + best.arrivalRate.toFixed(1) + '%('+best.orders+'单)', bad:[]};
+    }
+    // 按到达率升序
+    cities.sort(function(a,b){return a.arrivalRate - b.arrivalRate;});
+    var bad = [];
+    var maxShow = 3;
+    for (var i = 0; i < cities.length && bad.length < maxShow; i++) {
+      if (cities[i].arrivalRate < 45 || cities[i].cancelRate > 65) {
+        bad.push({city:cities[i].city, ar:cities[i].arrivalRate, cr:cities[i].cancelRate});
+      }
+    }
+    if (bad.length === 0) {
+      // 没有"差"的，就显示到达率最低的1个城市
+      var worst = cities[0];
+      return {note: worst.city + ':' + worst.arrivalRate.toFixed(1) + '%', bad:[]};
+    }
+    var noteParts = [];
+    for (var j = 0; j < bad.length; j++) {
+      noteParts.push(bad[j].city + ':' + bad[j].ar.toFixed(1) + '%');
+    }
+    return {note: noteParts.join(' '), bad:bad};
+  }
+
+  // 辅助函数：获取某渠道最差产品（订单占比最低的2个品类）
+  function getWorstProducts(chName) {
+    if (typeof CHANNEL_PRODUCT === 'undefined' || !CHANNEL_PRODUCT[chName]) return {note:'数据不足',bad:[]};
+    var products = CHANNEL_PRODUCT[chName].slice();
+    var total = products.reduce(function(s,p){return s+p.orders;},0);
+    // 按订单量升序
+    products.sort(function(a,b){return a.orders - b.orders;});
+    var bad = [];
+    var maxShow = 2;
+    for (var i = 0; i < products.length && bad.length < maxShow; i++) {
+      var pct = total > 0 ? (products[i].orders / total * 100).toFixed(1) : '0';
+      // 占比<3%才算"差"，或者渠道只有1-2个产品类型则标注单一
+      if (parseFloat(pct) < 3 || (products.length <= 2 && i < 1)) {
+        bad.push({product:products[i].product, orders:products[i].orders, pct:pct});
+      }
+    }
+    if (bad.length === 0 && products.length > 0) {
+      // 没有明显差的，显示占比最低的1个
+      var worst = products[0];
+      var wpct = total > 0 ? (worst.orders / total * 100).toFixed(1) : '0';
+      return {note: worst.product + '(' + wpct + '%)', bad:[]};
+    }
+    if (products.length <= 2 && products.length > 0) {
+      // 产品线单一
+      var singleNote = products.map(function(p){
+        var sp = total>0?(p.orders/total*100).toFixed(0):'0';
+        return p.product+'('+sp+'%)';
+      }).join(' ');
+      if (bad.length === 0) bad = products.map(function(p){
+        var sp2 = total>0?(p.orders/total*100).toFixed(1):'0';
+        return {product:p.product,orders:p.orders,pct:sp2};
+      });
+      return {note: '单一:' + singleNote, bad:bad};
+    }
+    var noteParts = [];
+    for (var j = 0; j < bad.length; j++) {
+      noteParts.push(bad[j].product + '(' + bad[j].pct + '%)');
+    }
+    return {note: noteParts.join(' '), bad:bad};
+  }
   
   var enriched = filtered.map(function(c) {
     var isNew = c.channelType === '新渠道';
@@ -2342,10 +2410,10 @@ function renderTop10() {
       arrivalRate: c.arrivalRate, lastArrivalRate: parseFloat(lastAR.toFixed(1)),
       successRate: c.successRate, lastSuccessRate: parseFloat(lastSR.toFixed(1)),
       unitPrice: c.unitPrice || 0, lastUnitPrice: parseFloat(lastUP.toFixed(2)),
-      // 城市表现：取行业相关的风险提示
-      cityNote: riskCities.length > 0 ? riskCities.slice(0,2).map(function(rc){return rc.city+':'+rc.cancelRate.toFixed(1)+'%';}).join(' ') : '—',
-      // 产品表现：基于行业判断相关下滑品类
-      productNote: (c.industry||'').indexOf('采买')>=0 ? '热水器·疏通' : (c.industry||'').indexOf('家政')>=0 ? '电视' : '—'
+      // 城市表现：基于 CHANNEL_CITY 取该渠道最差城市
+      cityInfo: getWorstCities(c.name),
+      // 产品表现：基于 CHANNEL_PRODUCT 取该渠道最差产品
+      productInfo: getWorstProducts(c.name)
     };
   });
   
@@ -2399,10 +2467,11 @@ function renderTop10() {
     html += '<td><div style="font-weight:600;font-size:13px;color:'+upColor+'">¥'+c.unitPrice.toFixed(2)+'</div>';
     html += fmtMoM(c.unitPrice, c.lastUnitPrice, '', false) + '</td>';
     // 城市表现
-    html += '<td style="font-size:10px;color:#fbbf24;line-height:1.4">' + c.cityNote + '</td>';
+    var cityColor = c.cityInfo.bad.length > 0 ? '#f87171' : '#fbbf24';
+    html += '<td style="font-size:10px;color:'+cityColor+';line-height:1.4;white-space:normal;word-break:break-word">' + c.cityInfo.note + '</td>';
     // 产品表现
-    var pColor = c.productNote==='—'?'#475569':'#f87171';
-    html += '<td style="font-size:10px;color:'+pColor+';line-height:1.3">' + c.productNote + '</td>';
+    var pColor = c.productInfo.bad.length > 0 ? '#f87171' : '#475569';
+    html += '<td style="font-size:10px;color:'+pColor+';line-height:1.3;white-space:normal;word-break:break-word">' + c.productInfo.note + '</td>';
     // 占比
     html += '<td style="color:#64748b;font-size:11px">' + weekPct + '%</td>';
     html += '</tr>';
@@ -2422,13 +2491,13 @@ function renderTop10() {
   avgUP = (avgUP / top10.length).toFixed(2);
   
   html += '<tr style="background:rgba(59,130,246,0.06);border-top:2px solid rgba(59,130,246,0.25)">';
-  html += '<td colspan="4" style="font-weight:600;color:#60a5fa;font-size:11px">📈 近一周汇总 (5.11-5.17)</td>';
+  html += '<td colspan="4" style="font-weight:600;color:#60a5fa;font-size:11px">📈 近一周汇总 (5.18-5.24)</td>';
   html += '<td style="font-weight:700;color:#e2e8f0">' + thisWeekTotal.toLocaleString() + '<br><span style="color:' + totalChgColor + ';font-size:10px">' + totalArrow + ' ' + totalSign + Math.abs(totalChg).toLocaleString() + ' vs上周</span></td>';
   html += '<td style="font-size:11px;color:#94a3b8">均' + avgAR + '%</td>';
   html += '<td style="font-size:11px;color:#94a3b8">均' + avgSR + '%</td>';
   html += '<td style="font-size:11px;color:#94a3b8">均¥' + avgUP + '</td>';
-  html += '<td style="font-size:10px;color:#fbbf24">乌市/北京/天津</td>';
-  html += '<td style="font-size:10px;color:#f87171">热水器·疏通</td>';
+  html += '<td style="font-size:10px;color:#fbbf24;white-space:normal;word-break:break-word">' + (riskCities.length > 0 ? riskCities.slice(0,2).map(function(rc){return rc.city+':'+rc.cancelRate.toFixed(1)+'%取消';}).join(' ') : '—') + '</td>';
+  html += '<td style="font-size:10px;color:#f87171;white-space:normal;word-break:break-word">热水器·疏通·电视</td>';
   html += '<td style="color:' + totalChgColor + ';font-size:11px;font-weight:600">' + totalArrow + ' ' + totalSign + totalPct + '%</td>';
   html += '</tr>';
 
@@ -2493,12 +2562,12 @@ function toggleHRPanel() {
 
 // 获取上期和本期数据
 function getPeriodData() {
-  if (typeof DAILY === 'undefined' || !DAILY.total || DAILY.total.length < 17) return null;
+  if (typeof DAILY === 'undefined' || !DAILY.total || DAILY.total.length < 24) return null;
   var thisWeekTotal = 0, lastWeekTotal = 0;
   var thisWeekNew = 0, lastWeekNew = 0;
   var thisWeekOld = 0, lastWeekOld = 0;
-  for (var i = 10; i < 17; i++) { thisWeekTotal += DAILY.total[i]; thisWeekNew += (DAILY.new[i]||0); thisWeekOld += (DAILY.old[i]||0); }
-  for (var i = 3; i < 10; i++) { lastWeekTotal += DAILY.total[i]; lastWeekNew += (DAILY.new[i]||0); lastWeekOld += (DAILY.old[i]||0); }
+  for (var i = 17; i < 24; i++) { thisWeekTotal += DAILY.total[i]; thisWeekNew += (DAILY.new[i]||0); thisWeekOld += (DAILY.old[i]||0); }
+  for (var i = 10; i < 17; i++) { lastWeekTotal += DAILY.total[i]; lastWeekNew += (DAILY.new[i]||0); lastWeekOld += (DAILY.old[i]||0); }
   return {
     thisWeekTotal: thisWeekTotal, lastWeekTotal: lastWeekTotal,
     thisWeekNew: thisWeekNew, lastWeekNew: lastWeekNew,
@@ -2608,7 +2677,7 @@ function renderHighRiskChannels() {
   avgUP = totalHRCount > 0 ? (avgUP/totalHRCount).toFixed(2) : '—';
   var allAvgUP = active.reduce(function(s,c){return s+c.unitPrice;},0) / active.length;
   document.getElementById('hr-summary').innerHTML = 
-    '当前共识别 <strong>' + highRisk.length + '</strong> 个高风险渠道（客单价低' + totalHRCount + '个·均¥' + avgUP + ' | 成功率低' + totalSRCount + '个 | 上门率低' + totalARCount + '个）。全渠道均客单价¥' + allAvgUP.toFixed(2) + '，低于均值的渠道占比' + (totalHRCount/active.length*100).toFixed(0) + '%。<br>⚠️ 相比上期(5.4-5.10)，本周总单量变化 <strong style="color:'+(pd.totalChange>=0?'#34d399':'#f87171')+'">'+(pd.totalChange>=0?'+':'')+pd.totalChange.toLocaleString()+'单</strong>，需重点关注以下渠道的恶化趋势。';
+    '当前共识别 <strong>' + highRisk.length + '</strong> 个高风险渠道（客单价低' + totalHRCount + '个·均¥' + avgUP + ' | 成功率低' + totalSRCount + '个 | 上门率低' + totalARCount + '个）。全渠道均客单价¥' + allAvgUP.toFixed(2) + '，低于均值的渠道占比' + (totalHRCount/active.length*100).toFixed(0) + '%。<br>⚠️ 相比上期(5.11-5.17)，本周总单量变化 <strong style="color:'+(pd.totalChange>=0?'#34d399':'#f87171')+'">'+(pd.totalChange>=0?'+':'')+pd.totalChange.toLocaleString()+'单</strong>，需重点关注以下渠道的恶化趋势。';
 
   // 渲染表格
   var html = '';
@@ -2700,11 +2769,12 @@ var industryExpanded = false;
 function renderIndustryTable() {
   // 全国体量数据（万家，来源：天眼查/企查查2025-2026年统计数据，排除夫妻店仅统计有规模企业）
   var nationalVolume = {
-    '采买类':'112万+','网站类':'78万+','家政类':'302万+','媒体类':'1129万+',
+    '采买类':'112万+','网站类':'78万+','家政类':'150万+','媒体类':'1129万+',
     '电商类':'2745万+','平台类':'350万+','跑腿类':'325万+','小程序':'78万+',
     '集采类':'180万+','政企类':'38万+',
-    '搬家类':'—','权益类':'—','维修类':'—','回收类':'—',
-    '物业类':'—','便民类':'—','物联类':'—','科技类':'—'
+    '搬家类':'10万+','回收类':'50万+',
+    '权益类':'—','维修类':'20万+',
+    '物业类':'20万+','便民类':'10万+','物联类':'5万+','科技类':'—','家装类':'200万+'
   };
   // 行业类别 → 渠道类型 一一映射
   var channelCategoryMap = {
@@ -2712,7 +2782,7 @@ function renderIndustryTable() {
     '电商类':'平台类','平台类':'平台类','跑腿类':'平台类','小程序':'平台类',
     '集采类':'集采类','政企类':'政企类','搬家类':'平台类','权益类':'权益类',
     '维修类':'平台类','回收类':'平台类','物业类':'物业类','便民类':'平台类',
-    '物联类':'平台类','科技类':'平台类'
+    '物联类':'平台类','科技类':'平台类','家装类':'平台类'
   };
 
   var filtered = getFilteredChannels();
