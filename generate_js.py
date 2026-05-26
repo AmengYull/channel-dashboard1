@@ -81,14 +81,18 @@ def _float(v):
         return 0.0
 
 def _fmt_date(v):
-    """Format date to MM.DD string like original dashboard (no leading zeros)."""
+    """Format date to M.D string like original dashboard (no leading zeros)."""
     if v is None:
         return ''
+    # Handle datetime objects from Excel
     if hasattr(v, 'strftime'):
         parts = v.strftime('%m.%d').split('.')
         return '.'.join(str(int(p)) for p in parts)
     s = str(v).strip()
-    # Handle Excel serial date numbers
+    # Handle Excel serial date numbers (format: 2026-05-10 or 5/10)
+    m = re.match(r'^(\d{4})-(\d{1,2})-(\d{1,2})$', s)
+    if m:
+        return f'{int(m.group(2))}.{int(m.group(3))}'
     m = re.match(r'^(\d{1,2})[./](\d{1,2})$', s)
     if m:
         return f'{int(m.group(1))}.{int(m.group(2))}'
