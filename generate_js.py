@@ -188,7 +188,115 @@ lines.append('')
 
 
 # ============================================================
-# 2. DAILY — aggregate from 渠道交付 by 按日(col6)
+# 2. CHANNEL_CITY — 每个渠道在各城市的表现数据
+# ============================================================
+print('\n=== Generating CHANNEL_CITY ===')
+channel_city_agg = defaultdict(lambda: defaultdict(lambda: {
+    'orders': 0, 'arrival': 0, 'success': 0, 'fail': 0, 'cancelRate': 0
+}))
+
+for r in range(2, ws_delivery.max_row + 1):
+    ch_name = ws_delivery.cell(r, 1).value
+    city = ws_delivery.cell(r, 7).value
+    if not ch_name or not city:
+        continue
+    ch_name = str(ch_name).strip()
+    city = str(city).strip()
+    
+    d = channel_city_agg[ch_name][city]
+    orders = _int(ws_delivery.cell(r, 8).value)
+    d['orders'] += orders
+    d['arrival'] += _int(ws_delivery.cell(r, 11).value)
+    d['success'] += _int(ws_delivery.cell(r, 13).value)
+    d['fail'] += _int(ws_delivery.cell(r, 14).value)
+
+# 计算率和过滤
+channel_city = {}
+for ch_name, cities in channel_city_agg.items():
+    city_list = []
+    for city, d in cities.items():
+        if d['orders'] < 5:  # 过滤小样本
+            continue
+        arrival_rate = round(d['arrival'] / d['orders'] * 100, 2) if d['orders'] else 0.0
+        success_rate = round(d['success'] / d['orders'] * 100, 2) if d['orders'] else 0.0
+        cancel_rate = round(100 - arrival_rate, 2)
+        city_list.append({
+            'city': city,
+            'orders': d['orders'],
+            'arrivalRate': arrival_rate,
+            'successRate': success_rate,
+            'cancelRate': cancel_rate
+        })
+    # 按订单量排序
+    city_list.sort(key=lambda x: -x['orders'])
+    channel_city[ch_name] = city_list[:10]  # 最多保留10个城市
+
+print(f'  CHANNEL_CITY: {len(channel_city)} channels with city data')
+lines.append('// =================== 渠道城市分布数据 ===================')
+lines.append('var CHANNEL_CITY = ' + json.dumps(channel_city, ensure_ascii=False, indent=2))
+lines.append('')
+
+
+# ============================================================
+# 3. CHANNEL_PRODUCT — 每个渠道的产品组分布数据
+# ============================================================
+print('\n=== Generating CHANNEL_PRODUCT ===')
+# 产品组映射规则
+PRODUCT_MAP = {
+    '水电': ['水电', '水管', '电路', '电线', '开关', '灯具', '龙头', '马桶', '卫浴'],
+    '家电': ['电视', '冰箱', '洗衣机', '空调', '热水器', '油烟机', '燃气灶', '微波炉', '烤箱'],
+    '门窗': ['门窗', '窗户', '门', '锁', '纱窗', '玻璃'],
+    '疏通': ['疏通', '管道', '下水道', '地漏'],
+    '家居': ['家具', '沙发', '床垫', '柜子', '桌椅', '床'],
+    '数码': ['手机', '电脑', '笔记本', '平板', '相机'],
+    '清洗': ['清洗', '保洁', '家政', '保洁'],
+}
+
+def get_product_group(industry):
+    """根据行业分类判断产品组"""
+    if not industry:
+        return '其他'
+    industry_str = str(industry)
+    for product, keywords in PRODUCT_MAP.items():
+        for kw in keywords:
+            if kw in industry_str:
+                return product
+    return '其他'
+
+channel_product_agg = defaultdict(lambda: defaultdict(int))
+
+for r in range(2, ws_delivery.max_row + 1):
+    ch_name = ws_delivery.cell(r, 1).value
+    industry = ws_delivery.cell(r, 5).value  # 行业分类
+    orders = _int(ws_delivery.cell(r, 8).value)
+    if not ch_name or orders == 0:
+        continue
+    ch_name = str(ch_name).strip()
+    product = get_product_group(industry)
+    channel_product_agg[ch_name][product] += orders
+
+# 转换为列表格式
+channel_product = {}
+for ch_name, products in channel_product_agg.items():
+    product_list = []
+    total = sum(products.values())
+    for product, orders in sorted(products.items(), key=lambda x: -x[1]):
+        pct = round(orders / total * 100, 1) if total else 0.0
+        product_list.append({
+            'product': product,
+            'orders': orders,
+            'pct': pct
+        })
+    channel_product[ch_name] = product_list
+
+print(f'  CHANNEL_PRODUCT: {len(channel_product)} channels with product data')
+lines.append('// =================== 渠道产品分布数据 ===================')
+lines.append('var CHANNEL_PRODUCT = ' + json.dumps(channel_product, ensure_ascii=False, indent=2))
+lines.append('')
+
+
+# ============================================================
+# 4. DAILY — aggregate from 渠道交付 by 按日(col6)
 # ============================================================
 print('\n=== Generating DAILY ===')
 
@@ -241,7 +349,7 @@ lines.append('')
 
 
 # ============================================================
-# 3. CITY — aggregate from 渠道交付 by 城市(col7), top 20
+# 5. CITY — aggregate from 渠道交付 by 城市(col7), top 20
 # ============================================================
 print('\n=== Generating CITY ===')
 city_agg = defaultdict(lambda: {'orders': 0, 'arrival': 0, 'success': 0, 'fail': 0})
@@ -277,7 +385,7 @@ lines.append('')
 
 
 # ============================================================
-# 4. INDUSTRY — group delivery data by 渠道分类.行业类型
+# 6. INDUSTRY — group delivery data by 渠道分类.行业类型
 # ============================================================
 print('\n=== Generating INDUSTRY ===')
 
@@ -328,7 +436,7 @@ lines.append('')
 
 
 # ============================================================
-# 5. CANCEL — read from 取消缘由 sheet, row 2 "合计"
+# 7. CANCEL — read from 取消缘由 sheet, row 2 "合计"
 # ============================================================
 print('\n=== Generating CANCEL ===')
 ws_cancel = wb['取消缘由']
@@ -359,7 +467,7 @@ lines.append('')
 
 
 # ============================================================
-# 6. VOICE — read from 语音标记 sheet, row 2 "合计"
+# 8. VOICE — read from 语音标记 sheet, row 2 "合计"
 # ============================================================
 print('\n=== Generating VOICE ===')
 ws_voice = wb['语音标记']
@@ -399,7 +507,7 @@ lines.append('')
 
 
 # ============================================================
-# 7. WOODPECKER — daily 啄木鸟 转单率 from 语音标记 rows 3+
+# 9. WOODPECKER — daily 啄木鸟 转单率 from 语音标记 rows 3+
 # ============================================================
 print('\n=== Generating WOODPECKER ===')
 
@@ -432,7 +540,8 @@ for r in range(3, ws_voice.max_row + 1):
         wd['channels'][ch_name].append(rate)
 
 sorted_wp_dates = sorted(wp_dates.keys(), key=_date_sort_key)
-wp_labels  = sorted_wp_dates[:17]
+# 扩展到25天 (5.1-5.25)
+wp_labels  = sorted_wp_dates[:25]
 wp_overall = []
 wp_ch_data = {ch: [] for ch in target_channels}
 
@@ -448,7 +557,7 @@ for ds in wp_labels:
 woodpecker = {'labels': wp_labels, 'overall': wp_overall}
 woodpecker.update(wp_ch_data)
 
-print(f'  WOODPECKER: {len(wp_labels)} dates, channels={target_channels}')
+print(f'  WOODPECKER: {len(wp_labels)} dates (5.1-5.25), channels={target_channels}')
 print(f'  Overall sample: {wp_overall[:5]}')
 lines.append('// =================== 啄木鸟转单率每日数据 ===================')
 lines.append('var WOODPECKER = ' + json.dumps(woodpecker, ensure_ascii=False, indent=2))
@@ -456,7 +565,7 @@ lines.append('')
 
 
 # ============================================================
-# 8. EXPANSION_LEADS — parse 拓展线索.xlsx via direct XML
+# 10. EXPANSION_LEADS — parse 拓展线索.xlsx via direct XML
 #    File has invalid XML that openpyxl rejects, but we can
 #    extract and parse the raw zip contents manually.
 # ============================================================
@@ -761,10 +870,12 @@ print(f'\n{"="*50}')
 print(f'Done! Generated: {out_path}')
 print(f'  Size: {os.path.getsize(out_path):,} bytes')
 print(f'  CHANNELS  : {len(channels)} items')
+print(f'  CHANNEL_CITY: {len(channel_city)} channels')
+print(f'  CHANNEL_PRODUCT: {len(channel_product)} channels')
 print(f'  DAILY     : {len(labels)} dates')
 print(f'  CITY      : {len(city_list)} cities')
 print(f'  INDUSTRY  : {len(industry_list)} industries')
 print(f'  CANCEL    : {len(cancel_list)} reasons')
 print(f'  VOICE     : {len(voice)} fields')
-print(f'  WOODPECKER: {len(wp_labels)} dates')
+print(f'  WOODPECKER: {len(wp_labels)} dates (5.1-5.25)')
 print(f'  EXPANSION : ai={expansion_leads["ai"]["total"]}, selfDev={expansion_leads["selfDeveloped"]["total"]}')
