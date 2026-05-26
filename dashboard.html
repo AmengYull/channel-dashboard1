@@ -620,7 +620,7 @@ body{background:#0a1628;min-height:100vh;font-family:-apple-system,BlinkMacSyste
             <th style="width:8.5%">成功率<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
             <th style="width:8.5%">客单价<span style="font-size:9px;color:#475569"><br>本周 / 环比</span></th>
             <th style="width:14%;white-space:normal">城市表现<span style="font-size:9px;color:#475569"><br>表现差城市<span style="color:#f87171">(到达率低)</span></span></th>
-            <th style="width:14%;white-space:normal">产品表现<span style="font-size:9px;color:#475569"><br>表现差品类<span style="color:#f87171">(成功率<25%)</span></span></th>
+            <th style="width:14%;white-space:normal">产品表现<span style="font-size:9px;color:#475569"><br>表现差品类<span style="color:#f87171">(占比低)</span></span></th>
             <th style="width:5%">占比</th>
           </tr>
         </thead>
@@ -2329,14 +2329,13 @@ function renderTop10() {
   }
   var declineProducts = ['热水器(-15%)','疏通(-6%)','电视(-0.8%)'];
   
-  // 辅助函数：获取某渠道最差城市（到达率最低的2个，阈值<45%才展示"表现差"）
+  // 辅助函数：获取某渠道最差城市（到达率最低的，阈值<45%才展示"表现差"）
   function getWorstCities(chName) {
     if (typeof CHANNEL_CITY === 'undefined' || !CHANNEL_CITY[chName]) return {note:'数据不足',bad:[]};
     var cities = CHANNEL_CITY[chName].slice();
     // 只保留订单>=20的城市（避免小样本噪音）
     cities = cities.filter(function(c){return c.orders >= 20;});
     if (cities.length === 0) {
-      // 所有城市都<20单，取最大的那个
       var allCities = CHANNEL_CITY[chName].slice();
       allCities.sort(function(a,b){return b.orders - a.orders;});
       if (allCities.length === 0) return {note:'数据不足',bad:[]};
@@ -2353,7 +2352,6 @@ function renderTop10() {
       }
     }
     if (bad.length === 0) {
-      // 没有"差"的，就显示到达率最低的1个城市
       var worst = cities[0];
       return {note: worst.city + ':' + worst.arrivalRate.toFixed(1) + '%', bad:[]};
     }
@@ -2364,37 +2362,41 @@ function renderTop10() {
     return {note: noteParts.join(' '), bad:bad};
   }
 
-  // 辅助函数：获取某渠道最差产品（成功率最低的品类，门槛30单）
+  // 辅助函数：获取某渠道最差产品（订单占比最低的品类）
   function getWorstProducts(chName) {
     if (typeof CHANNEL_PRODUCT === 'undefined' || !CHANNEL_PRODUCT[chName]) return {note:'数据不足',bad:[]};
     var products = CHANNEL_PRODUCT[chName].slice();
-    // 过滤订单量<30的产品（避免小样本）
-    products = products.filter(function(p){return p.orders >= 30;});
-    if (products.length === 0) return {note:'数据不足',bad:[]};
-    
-    // 按成功率升序排序（成功率低的在前）
-    products.sort(function(a,b){return (a.successRate||0) - (b.successRate||0);});
-    
+    var total = products.reduce(function(s,p){return s+p.orders;},0);
+    // 按订单量升序
+    products.sort(function(a,b){return a.orders - b.orders;});
     var bad = [];
     var maxShow = 2;
     for (var i = 0; i < products.length && bad.length < maxShow; i++) {
-      var p = products[i];
-      var sr = (p.successRate || 0).toFixed(0);
-      // 成功率<25%才算"表现差"
-      if (parseFloat(sr) < 25) {
-        bad.push({product:p.product, orders:p.orders, successRate:sr});
+      var pct = total > 0 ? (products[i].orders / total * 100).toFixed(1) : '0';
+      // 占比<3%才算"差"，或者渠道只有1-2个产品类型则标注单一
+      if (parseFloat(pct) < 3 || (products.length <= 2 && i < 1)) {
+        bad.push({product:products[i].product, orders:products[i].orders, pct:pct});
       }
     }
-    
-    if (bad.length === 0) {
-      // 没有明显差的，显示成功率最低的1个
+    if (bad.length === 0 && products.length > 0) {
       var worst = products[0];
-      return {note: worst.product + '(' + (worst.successRate||0).toFixed(0) + '%)', bad:[]};
+      var wpct = total > 0 ? (worst.orders / total * 100).toFixed(1) : '0';
+      return {note: worst.product + '(' + wpct + '%)', bad:[]};
     }
-    
+    if (products.length <= 2 && products.length > 0) {
+      var singleNote = products.map(function(p){
+        var sp = total>0?(p.orders/total*100).toFixed(0):'0';
+        return p.product+'('+sp+'%)';
+      }).join(' ');
+      if (bad.length === 0) bad = products.map(function(p){
+        var sp2 = total>0?(p.orders/total*100).toFixed(1):'0';
+        return {product:p.product,orders:p.orders,pct:sp2};
+      });
+      return {note: '单一:' + singleNote, bad:bad};
+    }
     var noteParts = [];
     for (var j = 0; j < bad.length; j++) {
-      noteParts.push(bad[j].product + bad[j].successRate + '%');
+      noteParts.push(bad[j].product + '(' + bad[j].pct + '%)');
     }
     return {note: noteParts.join(' '), bad:bad};
   }
