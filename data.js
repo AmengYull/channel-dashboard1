@@ -1,4 +1,4 @@
-// Auto-generated from 渠道数据.xlsx + 拓展线索.xlsx - 2026-05-26 10:34:15
+// Auto-generated from 渠道数据.xlsx + 拓展线索.xlsx - 2026-05-26 10:38:16
 
 // =================== 渠道数据 ===================
 var CHANNELS = [
@@ -940,122 +940,150 @@ var CHANNELS = [
 ]
 
 // =================== 渠道城市分布数据 ===================
+// 门槛：单城市订单>=30单，避免小样本干扰
 var CHANNEL_CITY = {
   "深圳鱼传科技": [],
   "徐州时良家电": [],
   "邮小哥科技": [],
-  "滴滴": [
-    {
-      "city": "北京",
-      "orders": 5,
-      "arrivalRate": 60.0,
-      "successRate": 60.0,
-      "cancelRate": 40.0
-    }
-  ],
+  "滴滴": [],
   "厦门众拍科技": [],
   "小工匠": [
     {
       "city": "天津",
       "orders": 201,
-      "arrivalRate": 50.75,
-      "successRate": 28.36,
-      "cancelRate": 49.25
+      "arrivalRate": 50.7,
+      "successRate": 28.4,
+      "cancelRate": 49.3
     },
     {
       "city": "乌鲁木齐",
       "orders": 179,
-      "arrivalRate": 43.58,
-      "successRate": 23.46,
-      "cancelRate": 56.42
+      "arrivalRate": 43.6,
+      "successRate": 23.5,
+      "cancelRate": 56.4
     },
     {
       "city": "东莞",
       "orders": 174,
       "arrivalRate": 52.3,
-      "successRate": 24.71,
+      "successRate": 24.7,
       "cancelRate": 47.7
     },
     {
       "city": "杭州",
       "orders": 151,
-      "arrivalRate": 57.62,
-      "successRate": 37.09,
-      "cancelRate": 42.38
+      "arrivalRate": 57.6,
+      "successRate": 37.1,
+      "cancelRate": 42.4
     },
     {
       "city": "广州",
       "orders": 147,
-      "arrivalRate": 65.99,
-      "successRate": 34.01,
-      "cancelRate": 34.01
+      "arrivalRate": 66.0,
+      "successRate": 34.0,
+      "cancelRate": 34.0
     },
     {
       "city": "沈阳",
       "orders": 143,
-      "arrivalRate": 57.34,
-      "successRate": 37.06,
-      "cancelRate": 42.66
+      "arrivalRate": 57.3,
+      "successRate": 37.1,
+      "cancelRate": 42.7
     },
     {
       "city": "成都",
       "orders": 131,
-      "arrivalRate": 51.15,
+      "arrivalRate": 51.1,
       "successRate": 22.9,
-      "cancelRate": 48.85
+      "cancelRate": 48.9
     },
     {
       "city": "西安",
       "orders": 130,
-      "arrivalRate": 49.23,
-      "successRate": 23.08,
-      "cancelRate": 50.77
+      "arrivalRate": 49.2,
+      "successRate": 23.1,
+      "cancelRate": 50.8
     },
     {
       "city": "贵阳",
       "orders": 120,
       "arrivalRate": 55.0,
-      "successRate": 33.33,
+      "successRate": 33.3,
       "cancelRate": 45.0
     },
     {
       "city": "重庆",
       "orders": 115,
-      "arrivalRate": 57.39,
-      "successRate": 36.52,
-      "cancelRate": 42.61
+      "arrivalRate": 57.4,
+      "successRate": 36.5,
+      "cancelRate": 42.6
+    },
+    {
+      "city": "南昌",
+      "orders": 109,
+      "arrivalRate": 62.4,
+      "successRate": 38.5,
+      "cancelRate": 37.6
+    },
+    {
+      "city": "上海",
+      "orders": 105,
+      "arrivalRate": 61.9,
+      "successRate": 27.6,
+      "cancelRate": 38.1
+    },
+    {
+      "city": "长春",
+      "orders": 104,
+      "arrivalRate": 60.6,
+      "successRate": 35.6,
+      "cancelRate": 39.4
+    },
+    {
+      "city": "合肥",
+      "orders": 101,
+      "arrivalRate": 45.5,
+      "successRate": 22.8,
+      "cancelRate": 54.5
+    },
+    {
+      "city": "石家庄",
+      "orders": 101,
+      "arrivalRate": 47.5,
+      "successRate": 24.8,
+      "cancelRate": 52.5
     }
   ],
   "天杰后勤": [
     {
       "city": "重庆",
       "orders": 67,
-      "arrivalRate": 77.61,
+      "arrivalRate": 77.6,
       "successRate": 20.9,
-      "cancelRate": 22.39
+      "cancelRate": 22.4
     }
   ],
   "浔安信息咨询": [
     {
       "city": "重庆",
       "orders": 41,
-      "arrivalRate": 53.66,
-      "successRate": 31.71,
-      "cancelRate": 46.34
+      "arrivalRate": 53.7,
+      "successRate": 31.7,
+      "cancelRate": 46.3
     },
     {
       "city": "贵阳",
       "orders": 33,
-      "arrivalRate": 51.52,
-      "successRate": 33.33,
-      "cancelRate": 48.48
+      "arrivalRate": 51.5,
+      "successRate": 33.3,
+      "cancelRate": 48.5
     },
     {
       "city": "西安",
       "orders": 30,
-      "arrivalRate": 46.67,
+      "arrivalRate": 46.7,
       "successRate": 30.0,
-      "cancelRate": 53.33
+      "cancelRate": 53.3
     },
     {
       "city": "苏州",
@@ -1063,48 +1091,6 @@ var CHANNEL_CITY = {
       "arrivalRate": 80.0,
       "successRate": 40.0,
       "cancelRate": 20.0
-    },
-    {
-      "city": "沈阳",
-      "orders": 28,
-      "arrivalRate": 64.29,
-      "successRate": 35.71,
-      "cancelRate": 35.71
-    },
-    {
-      "city": "成都",
-      "orders": 25,
-      "arrivalRate": 40.0,
-      "successRate": 20.0,
-      "cancelRate": 60.0
-    },
-    {
-      "city": "乌鲁木齐",
-      "orders": 24,
-      "arrivalRate": 54.17,
-      "successRate": 33.33,
-      "cancelRate": 45.83
-    },
-    {
-      "city": "天津",
-      "orders": 21,
-      "arrivalRate": 57.14,
-      "successRate": 28.57,
-      "cancelRate": 42.86
-    },
-    {
-      "city": "杭州",
-      "orders": 21,
-      "arrivalRate": 47.62,
-      "successRate": 38.1,
-      "cancelRate": 52.38
-    },
-    {
-      "city": "北京",
-      "orders": 20,
-      "arrivalRate": 30.0,
-      "successRate": 10.0,
-      "cancelRate": 70.0
     }
   ],
   "猪八戒": [],
@@ -1113,72 +1099,23 @@ var CHANNEL_CITY = {
     {
       "city": "北京",
       "orders": 42,
-      "arrivalRate": 73.81,
+      "arrivalRate": 73.8,
       "successRate": 50.0,
-      "cancelRate": 26.19
+      "cancelRate": 26.2
     },
     {
       "city": "广州",
       "orders": 39,
-      "arrivalRate": 79.49,
-      "successRate": 58.97,
-      "cancelRate": 20.51
+      "arrivalRate": 79.5,
+      "successRate": 59.0,
+      "cancelRate": 20.5
     },
     {
       "city": "沈阳",
       "orders": 30,
-      "arrivalRate": 83.33,
-      "successRate": 73.33,
-      "cancelRate": 16.67
-    },
-    {
-      "city": "深圳",
-      "orders": 26,
-      "arrivalRate": 76.92,
-      "successRate": 50.0,
-      "cancelRate": 23.08
-    },
-    {
-      "city": "天津",
-      "orders": 26,
-      "arrivalRate": 76.92,
-      "successRate": 53.85,
-      "cancelRate": 23.08
-    },
-    {
-      "city": "成都",
-      "orders": 26,
-      "arrivalRate": 76.92,
-      "successRate": 46.15,
-      "cancelRate": 23.08
-    },
-    {
-      "city": "武汉",
-      "orders": 26,
-      "arrivalRate": 84.62,
-      "successRate": 42.31,
-      "cancelRate": 15.38
-    },
-    {
-      "city": "长春",
-      "orders": 24,
-      "arrivalRate": 95.83,
-      "successRate": 58.33,
-      "cancelRate": 4.17
-    },
-    {
-      "city": "西安",
-      "orders": 24,
-      "arrivalRate": 75.0,
-      "successRate": 37.5,
-      "cancelRate": 25.0
-    },
-    {
-      "city": "苏州",
-      "orders": 23,
-      "arrivalRate": 65.22,
-      "successRate": 43.48,
-      "cancelRate": 34.78
+      "arrivalRate": 83.3,
+      "successRate": 73.3,
+      "cancelRate": 16.7
     }
   ],
   "湖南希甲": [],
@@ -1186,144 +1123,32 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 39,
-      "arrivalRate": 38.46,
-      "successRate": 7.69,
-      "cancelRate": 61.54
-    },
-    {
-      "city": "重庆",
-      "orders": 15,
-      "arrivalRate": 46.67,
-      "successRate": 20.0,
-      "cancelRate": 53.33
-    },
-    {
-      "city": "上海",
-      "orders": 14,
-      "arrivalRate": 28.57,
-      "successRate": 14.29,
-      "cancelRate": 71.43
-    },
-    {
-      "city": "贵阳",
-      "orders": 14,
-      "arrivalRate": 28.57,
-      "successRate": 14.29,
-      "cancelRate": 71.43
-    },
-    {
-      "city": "广州",
-      "orders": 14,
-      "arrivalRate": 71.43,
-      "successRate": 14.29,
-      "cancelRate": 28.57
-    },
-    {
-      "city": "天津",
-      "orders": 13,
-      "arrivalRate": 61.54,
-      "successRate": 38.46,
-      "cancelRate": 38.46
-    },
-    {
-      "city": "常州",
-      "orders": 12,
-      "arrivalRate": 25.0,
-      "successRate": 0.0,
-      "cancelRate": 75.0
-    },
-    {
-      "city": "北京",
-      "orders": 10,
-      "arrivalRate": 30.0,
-      "successRate": 10.0,
-      "cancelRate": 70.0
-    },
-    {
-      "city": "青岛",
-      "orders": 10,
-      "arrivalRate": 50.0,
-      "successRate": 30.0,
-      "cancelRate": 50.0
-    },
-    {
-      "city": "武汉",
-      "orders": 8,
-      "arrivalRate": 37.5,
-      "successRate": 25.0,
-      "cancelRate": 62.5
+      "arrivalRate": 38.5,
+      "successRate": 7.7,
+      "cancelRate": 61.5
     }
   ],
   "太平洋电脑网": [
     {
       "city": "北京",
       "orders": 37,
-      "arrivalRate": 64.86,
-      "successRate": 43.24,
-      "cancelRate": 35.14
+      "arrivalRate": 64.9,
+      "successRate": 43.2,
+      "cancelRate": 35.1
     },
     {
       "city": "上海",
       "orders": 36,
-      "arrivalRate": 61.11,
-      "successRate": 38.89,
-      "cancelRate": 38.89
+      "arrivalRate": 61.1,
+      "successRate": 38.9,
+      "cancelRate": 38.9
     },
     {
       "city": "西安",
       "orders": 32,
-      "arrivalRate": 84.38,
+      "arrivalRate": 84.4,
       "successRate": 62.5,
-      "cancelRate": 15.62
-    },
-    {
-      "city": "天津",
-      "orders": 27,
-      "arrivalRate": 74.07,
-      "successRate": 44.44,
-      "cancelRate": 25.93
-    },
-    {
-      "city": "苏州",
-      "orders": 19,
-      "arrivalRate": 73.68,
-      "successRate": 31.58,
-      "cancelRate": 26.32
-    },
-    {
-      "city": "南京",
-      "orders": 17,
-      "arrivalRate": 70.59,
-      "successRate": 41.18,
-      "cancelRate": 29.41
-    },
-    {
-      "city": "深圳",
-      "orders": 17,
-      "arrivalRate": 82.35,
-      "successRate": 58.82,
-      "cancelRate": 17.65
-    },
-    {
-      "city": "广州",
-      "orders": 16,
-      "arrivalRate": 75.0,
-      "successRate": 31.25,
-      "cancelRate": 25.0
-    },
-    {
-      "city": "石家庄",
-      "orders": 15,
-      "arrivalRate": 73.33,
-      "successRate": 20.0,
-      "cancelRate": 26.67
-    },
-    {
-      "city": "唐山",
-      "orders": 14,
-      "arrivalRate": 100.0,
-      "successRate": 57.14,
-      "cancelRate": 0.0
+      "cancelRate": 15.6
     }
   ],
   "追计家电": [],
@@ -1334,9 +1159,9 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 43,
-      "arrivalRate": 41.86,
+      "arrivalRate": 41.9,
       "successRate": 18.6,
-      "cancelRate": 58.14
+      "cancelRate": 58.1
     },
     {
       "city": "苏州",
@@ -1348,58 +1173,37 @@ var CHANNEL_CITY = {
     {
       "city": "长沙",
       "orders": 33,
-      "arrivalRate": 57.58,
-      "successRate": 27.27,
-      "cancelRate": 42.42
+      "arrivalRate": 57.6,
+      "successRate": 27.3,
+      "cancelRate": 42.4
     },
     {
       "city": "武汉",
       "orders": 33,
-      "arrivalRate": 48.48,
-      "successRate": 24.24,
-      "cancelRate": 51.52
+      "arrivalRate": 48.5,
+      "successRate": 24.2,
+      "cancelRate": 51.5
     },
     {
       "city": "南昌",
       "orders": 32,
-      "arrivalRate": 56.25,
-      "successRate": 21.88,
-      "cancelRate": 43.75
+      "arrivalRate": 56.2,
+      "successRate": 21.9,
+      "cancelRate": 43.8
     },
     {
       "city": "北京",
       "orders": 30,
-      "arrivalRate": 36.67,
-      "successRate": 13.33,
-      "cancelRate": 63.33
+      "arrivalRate": 36.7,
+      "successRate": 13.3,
+      "cancelRate": 63.3
     },
     {
       "city": "重庆",
       "orders": 30,
-      "arrivalRate": 53.33,
-      "successRate": 16.67,
-      "cancelRate": 46.67
-    },
-    {
-      "city": "南宁",
-      "orders": 27,
-      "arrivalRate": 62.96,
-      "successRate": 37.04,
-      "cancelRate": 37.04
-    },
-    {
-      "city": "上海",
-      "orders": 26,
-      "arrivalRate": 42.31,
-      "successRate": 11.54,
-      "cancelRate": 57.69
-    },
-    {
-      "city": "西安",
-      "orders": 26,
-      "arrivalRate": 50.0,
-      "successRate": 26.92,
-      "cancelRate": 50.0
+      "arrivalRate": 53.3,
+      "successRate": 16.7,
+      "cancelRate": 46.7
     }
   ],
   "启量智能科技": [],
@@ -1407,72 +1211,86 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 117,
-      "arrivalRate": 52.14,
-      "successRate": 22.22,
-      "cancelRate": 47.86
+      "arrivalRate": 52.1,
+      "successRate": 22.2,
+      "cancelRate": 47.9
     },
     {
       "city": "东莞",
       "orders": 85,
-      "arrivalRate": 48.24,
+      "arrivalRate": 48.2,
       "successRate": 20.0,
-      "cancelRate": 51.76
+      "cancelRate": 51.8
     },
     {
       "city": "重庆",
       "orders": 66,
-      "arrivalRate": 54.55,
-      "successRate": 28.79,
-      "cancelRate": 45.45
+      "arrivalRate": 54.5,
+      "successRate": 28.8,
+      "cancelRate": 45.5
     },
     {
       "city": "广州",
       "orders": 59,
-      "arrivalRate": 35.59,
-      "successRate": 18.64,
-      "cancelRate": 64.41
+      "arrivalRate": 35.6,
+      "successRate": 18.6,
+      "cancelRate": 64.4
     },
     {
       "city": "深圳",
       "orders": 51,
-      "arrivalRate": 58.82,
-      "successRate": 19.61,
-      "cancelRate": 41.18
+      "arrivalRate": 58.8,
+      "successRate": 19.6,
+      "cancelRate": 41.2
     },
     {
       "city": "贵阳",
       "orders": 42,
       "arrivalRate": 50.0,
-      "successRate": 26.19,
+      "successRate": 26.2,
       "cancelRate": 50.0
     },
     {
       "city": "苏州",
       "orders": 41,
-      "arrivalRate": 51.22,
-      "successRate": 24.39,
-      "cancelRate": 48.78
+      "arrivalRate": 51.2,
+      "successRate": 24.4,
+      "cancelRate": 48.8
     },
     {
       "city": "长沙",
       "orders": 35,
-      "arrivalRate": 51.43,
-      "successRate": 22.86,
-      "cancelRate": 48.57
+      "arrivalRate": 51.4,
+      "successRate": 22.9,
+      "cancelRate": 48.6
     },
     {
       "city": "上海",
       "orders": 34,
-      "arrivalRate": 58.82,
-      "successRate": 20.59,
-      "cancelRate": 41.18
+      "arrivalRate": 58.8,
+      "successRate": 20.6,
+      "cancelRate": 41.2
     },
     {
       "city": "西安",
       "orders": 34,
-      "arrivalRate": 32.35,
-      "successRate": 17.65,
-      "cancelRate": 67.65
+      "arrivalRate": 32.4,
+      "successRate": 17.6,
+      "cancelRate": 67.6
+    },
+    {
+      "city": "太原",
+      "orders": 31,
+      "arrivalRate": 51.6,
+      "successRate": 22.6,
+      "cancelRate": 48.4
+    },
+    {
+      "city": "武汉",
+      "orders": 30,
+      "arrivalRate": 66.7,
+      "successRate": 26.7,
+      "cancelRate": 33.3
     }
   ],
   "宜昌雨墨图书": [],
@@ -1480,216 +1298,170 @@ var CHANNEL_CITY = {
     {
       "city": "苏州",
       "orders": 387,
-      "arrivalRate": 51.94,
-      "successRate": 23.51,
-      "cancelRate": 48.06
+      "arrivalRate": 51.9,
+      "successRate": 23.5,
+      "cancelRate": 48.1
     },
     {
       "city": "成都",
       "orders": 304,
-      "arrivalRate": 48.03,
+      "arrivalRate": 48.0,
       "successRate": 22.7,
-      "cancelRate": 51.97
+      "cancelRate": 52.0
     },
     {
       "city": "上海",
       "orders": 295,
-      "arrivalRate": 52.54,
-      "successRate": 18.31,
-      "cancelRate": 47.46
+      "arrivalRate": 52.5,
+      "successRate": 18.3,
+      "cancelRate": 47.5
     },
     {
       "city": "贵阳",
       "orders": 276,
-      "arrivalRate": 56.16,
-      "successRate": 29.71,
-      "cancelRate": 43.84
+      "arrivalRate": 56.2,
+      "successRate": 29.7,
+      "cancelRate": 43.8
     },
     {
       "city": "广州",
       "orders": 259,
-      "arrivalRate": 45.17,
-      "successRate": 15.44,
-      "cancelRate": 54.83
+      "arrivalRate": 45.2,
+      "successRate": 15.4,
+      "cancelRate": 54.8
     },
     {
       "city": "深圳",
       "orders": 239,
-      "arrivalRate": 46.44,
-      "successRate": 22.18,
-      "cancelRate": 53.56
+      "arrivalRate": 46.4,
+      "successRate": 22.2,
+      "cancelRate": 53.6
     },
     {
       "city": "天津",
       "orders": 220,
-      "arrivalRate": 40.45,
-      "successRate": 17.73,
-      "cancelRate": 59.55
+      "arrivalRate": 40.5,
+      "successRate": 17.7,
+      "cancelRate": 59.5
     },
     {
       "city": "西安",
       "orders": 218,
-      "arrivalRate": 45.87,
-      "successRate": 20.64,
-      "cancelRate": 54.13
+      "arrivalRate": 45.9,
+      "successRate": 20.6,
+      "cancelRate": 54.1
     },
     {
       "city": "重庆",
       "orders": 217,
-      "arrivalRate": 46.08,
-      "successRate": 24.88,
-      "cancelRate": 53.92
+      "arrivalRate": 46.1,
+      "successRate": 24.9,
+      "cancelRate": 53.9
     },
     {
       "city": "乌鲁木齐",
       "orders": 215,
-      "arrivalRate": 36.74,
-      "successRate": 17.21,
-      "cancelRate": 63.26
+      "arrivalRate": 36.7,
+      "successRate": 17.2,
+      "cancelRate": 63.3
+    },
+    {
+      "city": "青岛",
+      "orders": 184,
+      "arrivalRate": 50.5,
+      "successRate": 21.2,
+      "cancelRate": 49.5
+    },
+    {
+      "city": "昆明",
+      "orders": 173,
+      "arrivalRate": 52.6,
+      "successRate": 22.0,
+      "cancelRate": 47.4
+    },
+    {
+      "city": "北京",
+      "orders": 171,
+      "arrivalRate": 33.3,
+      "successRate": 14.6,
+      "cancelRate": 66.7
+    },
+    {
+      "city": "兰州",
+      "orders": 162,
+      "arrivalRate": 48.8,
+      "successRate": 25.3,
+      "cancelRate": 51.2
+    },
+    {
+      "city": "合肥",
+      "orders": 160,
+      "arrivalRate": 45.6,
+      "successRate": 21.2,
+      "cancelRate": 54.4
     }
   ],
   "家事速配": [],
-  "凤凰物业": [
-    {
-      "city": "深圳",
-      "orders": 10,
-      "arrivalRate": 60.0,
-      "successRate": 40.0,
-      "cancelRate": 40.0
-    }
-  ],
+  "凤凰物业": [],
   "北京超级想科技": [],
-  "顾友家政": [
-    {
-      "city": "北京",
-      "orders": 7,
-      "arrivalRate": 28.57,
-      "successRate": 0.0,
-      "cancelRate": 71.43
-    },
-    {
-      "city": "成都",
-      "orders": 7,
-      "arrivalRate": 42.86,
-      "successRate": 0.0,
-      "cancelRate": 57.14
-    },
-    {
-      "city": "深圳",
-      "orders": 6,
-      "arrivalRate": 66.67,
-      "successRate": 33.33,
-      "cancelRate": 33.33
-    },
-    {
-      "city": "上海",
-      "orders": 5,
-      "arrivalRate": 40.0,
-      "successRate": 20.0,
-      "cancelRate": 60.0
-    }
-  ],
+  "顾友家政": [],
   "诺诺丫百货": [
     {
       "city": "成都",
       "orders": 79,
-      "arrivalRate": 59.49,
-      "successRate": 10.13,
-      "cancelRate": 40.51
+      "arrivalRate": 59.5,
+      "successRate": 10.1,
+      "cancelRate": 40.5
     },
     {
       "city": "贵阳",
       "orders": 38,
       "arrivalRate": 50.0,
-      "successRate": 21.05,
+      "successRate": 21.1,
       "cancelRate": 50.0
     },
     {
       "city": "广州",
       "orders": 38,
-      "arrivalRate": 57.89,
-      "successRate": 18.42,
-      "cancelRate": 42.11
+      "arrivalRate": 57.9,
+      "successRate": 18.4,
+      "cancelRate": 42.1
     },
     {
       "city": "重庆",
       "orders": 36,
-      "arrivalRate": 55.56,
-      "successRate": 19.44,
-      "cancelRate": 44.44
+      "arrivalRate": 55.6,
+      "successRate": 19.4,
+      "cancelRate": 44.4
     },
     {
       "city": "深圳",
       "orders": 34,
-      "arrivalRate": 47.06,
-      "successRate": 29.41,
-      "cancelRate": 52.94
+      "arrivalRate": 47.1,
+      "successRate": 29.4,
+      "cancelRate": 52.9
     },
     {
       "city": "苏州",
       "orders": 32,
       "arrivalRate": 75.0,
-      "successRate": 28.12,
+      "successRate": 28.1,
       "cancelRate": 25.0
-    },
-    {
-      "city": "西安",
-      "orders": 29,
-      "arrivalRate": 48.28,
-      "successRate": 10.34,
-      "cancelRate": 51.72
-    },
-    {
-      "city": "昆明",
-      "orders": 27,
-      "arrivalRate": 55.56,
-      "successRate": 22.22,
-      "cancelRate": 44.44
-    },
-    {
-      "city": "东莞",
-      "orders": 26,
-      "arrivalRate": 50.0,
-      "successRate": 15.38,
-      "cancelRate": 50.0
-    },
-    {
-      "city": "上海",
-      "orders": 24,
-      "arrivalRate": 45.83,
-      "successRate": 16.67,
-      "cancelRate": 54.17
     }
   ],
   "掌上通": [],
   "麦乐琪": [],
   "山东驰鼎传媒": [],
   "杭州优程家政": [],
-  "广电": [
-    {
-      "city": "合肥",
-      "orders": 24,
-      "arrivalRate": 75.0,
-      "successRate": 41.67,
-      "cancelRate": 25.0
-    }
-  ],
-  "新视点科技": [
-    {
-      "city": "重庆",
-      "orders": 7,
-      "arrivalRate": 57.14,
-      "successRate": 57.14,
-      "cancelRate": 42.86
-    }
-  ],
+  "广电": [],
+  "新视点科技": [],
   "宏贵网络": [
     {
       "city": "重庆",
       "orders": 43,
-      "arrivalRate": 41.86,
-      "successRate": 25.58,
-      "cancelRate": 58.14
+      "arrivalRate": 41.9,
+      "successRate": 25.6,
+      "cancelRate": 58.1
     },
     {
       "city": "成都",
@@ -1701,213 +1473,120 @@ var CHANNEL_CITY = {
     {
       "city": "广州",
       "orders": 34,
-      "arrivalRate": 52.94,
-      "successRate": 26.47,
-      "cancelRate": 47.06
-    },
-    {
-      "city": "东莞",
-      "orders": 27,
-      "arrivalRate": 48.15,
-      "successRate": 7.41,
-      "cancelRate": 51.85
-    },
-    {
-      "city": "北京",
-      "orders": 26,
-      "arrivalRate": 42.31,
-      "successRate": 11.54,
-      "cancelRate": 57.69
-    },
-    {
-      "city": "太原",
-      "orders": 25,
-      "arrivalRate": 48.0,
-      "successRate": 16.0,
-      "cancelRate": 52.0
-    },
-    {
-      "city": "苏州",
-      "orders": 25,
-      "arrivalRate": 56.0,
-      "successRate": 24.0,
-      "cancelRate": 44.0
-    },
-    {
-      "city": "中山",
-      "orders": 24,
-      "arrivalRate": 50.0,
-      "successRate": 29.17,
-      "cancelRate": 50.0
-    },
-    {
-      "city": "上海",
-      "orders": 24,
-      "arrivalRate": 54.17,
-      "successRate": 25.0,
-      "cancelRate": 45.83
-    },
-    {
-      "city": "西安",
-      "orders": 24,
-      "arrivalRate": 45.83,
-      "successRate": 12.5,
-      "cancelRate": 54.17
+      "arrivalRate": 52.9,
+      "successRate": 26.5,
+      "cancelRate": 47.1
     }
   ],
   "翰联": [],
   "奇胜信息": [],
-  "电视台": [
-    {
-      "city": "青岛",
-      "orders": 29,
-      "arrivalRate": 89.66,
-      "successRate": 62.07,
-      "cancelRate": 10.34
-    }
-  ],
-  "美琪荣厨": [
-    {
-      "city": "乌鲁木齐",
-      "orders": 20,
-      "arrivalRate": 50.0,
-      "successRate": 35.0,
-      "cancelRate": 50.0
-    },
-    {
-      "city": "太原",
-      "orders": 16,
-      "arrivalRate": 62.5,
-      "successRate": 50.0,
-      "cancelRate": 37.5
-    },
-    {
-      "city": "广州",
-      "orders": 14,
-      "arrivalRate": 71.43,
-      "successRate": 42.86,
-      "cancelRate": 28.57
-    },
-    {
-      "city": "苏州",
-      "orders": 13,
-      "arrivalRate": 46.15,
-      "successRate": 30.77,
-      "cancelRate": 53.85
-    },
-    {
-      "city": "沈阳",
-      "orders": 12,
-      "arrivalRate": 41.67,
-      "successRate": 16.67,
-      "cancelRate": 58.33
-    },
-    {
-      "city": "西安",
-      "orders": 12,
-      "arrivalRate": 41.67,
-      "successRate": 41.67,
-      "cancelRate": 58.33
-    },
-    {
-      "city": "上海",
-      "orders": 11,
-      "arrivalRate": 36.36,
-      "successRate": 18.18,
-      "cancelRate": 63.64
-    },
-    {
-      "city": "大连",
-      "orders": 10,
-      "arrivalRate": 30.0,
-      "successRate": 20.0,
-      "cancelRate": 70.0
-    },
-    {
-      "city": "青岛",
-      "orders": 10,
-      "arrivalRate": 70.0,
-      "successRate": 40.0,
-      "cancelRate": 30.0
-    },
-    {
-      "city": "呼和浩特",
-      "orders": 10,
-      "arrivalRate": 20.0,
-      "successRate": 20.0,
-      "cancelRate": 80.0
-    }
-  ],
+  "电视台": [],
+  "美琪荣厨": [],
   "佛山灿记家电": [
     {
       "city": "成都",
       "orders": 280,
-      "arrivalRate": 54.64,
-      "successRate": 31.43,
-      "cancelRate": 45.36
+      "arrivalRate": 54.6,
+      "successRate": 31.4,
+      "cancelRate": 45.4
     },
     {
       "city": "重庆",
       "orders": 196,
       "arrivalRate": 55.1,
-      "successRate": 36.22,
+      "successRate": 36.2,
       "cancelRate": 44.9
     },
     {
       "city": "苏州",
       "orders": 153,
-      "arrivalRate": 54.25,
-      "successRate": 28.76,
-      "cancelRate": 45.75
+      "arrivalRate": 54.2,
+      "successRate": 28.8,
+      "cancelRate": 45.8
     },
     {
       "city": "西安",
       "orders": 152,
-      "arrivalRate": 48.68,
-      "successRate": 28.95,
-      "cancelRate": 51.32
+      "arrivalRate": 48.7,
+      "successRate": 28.9,
+      "cancelRate": 51.3
     },
     {
       "city": "北京",
       "orders": 132,
-      "arrivalRate": 46.97,
-      "successRate": 22.73,
-      "cancelRate": 53.03
+      "arrivalRate": 47.0,
+      "successRate": 22.7,
+      "cancelRate": 53.0
     },
     {
       "city": "广州",
       "orders": 129,
-      "arrivalRate": 58.91,
-      "successRate": 27.91,
-      "cancelRate": 41.09
+      "arrivalRate": 58.9,
+      "successRate": 27.9,
+      "cancelRate": 41.1
     },
     {
       "city": "天津",
       "orders": 126,
-      "arrivalRate": 47.62,
-      "successRate": 22.22,
-      "cancelRate": 52.38
+      "arrivalRate": 47.6,
+      "successRate": 22.2,
+      "cancelRate": 52.4
     },
     {
       "city": "乌鲁木齐",
       "orders": 122,
       "arrivalRate": 41.8,
-      "successRate": 24.59,
+      "successRate": 24.6,
       "cancelRate": 58.2
     },
     {
       "city": "贵阳",
       "orders": 113,
       "arrivalRate": 64.6,
-      "successRate": 37.17,
+      "successRate": 37.2,
       "cancelRate": 35.4
     },
     {
       "city": "深圳",
       "orders": 107,
-      "arrivalRate": 60.75,
-      "successRate": 28.04,
-      "cancelRate": 39.25
+      "arrivalRate": 60.7,
+      "successRate": 28.0,
+      "cancelRate": 39.3
+    },
+    {
+      "city": "上海",
+      "orders": 105,
+      "arrivalRate": 59.0,
+      "successRate": 28.6,
+      "cancelRate": 41.0
+    },
+    {
+      "city": "武汉",
+      "orders": 102,
+      "arrivalRate": 53.9,
+      "successRate": 29.4,
+      "cancelRate": 46.1
+    },
+    {
+      "city": "合肥",
+      "orders": 86,
+      "arrivalRate": 57.0,
+      "successRate": 33.7,
+      "cancelRate": 43.0
+    },
+    {
+      "city": "东莞",
+      "orders": 86,
+      "arrivalRate": 48.8,
+      "successRate": 24.4,
+      "cancelRate": 51.2
+    },
+    {
+      "city": "郑州",
+      "orders": 83,
+      "arrivalRate": 60.2,
+      "successRate": 30.1,
+      "cancelRate": 39.8
     }
   ],
   "有蜜到家": [],
@@ -1915,65 +1594,65 @@ var CHANNEL_CITY = {
     {
       "city": "上海",
       "orders": 520,
-      "arrivalRate": 65.96,
-      "successRate": 40.58,
-      "cancelRate": 34.04
+      "arrivalRate": 66.0,
+      "successRate": 40.6,
+      "cancelRate": 34.0
     },
     {
       "city": "广州",
       "orders": 361,
-      "arrivalRate": 67.04,
-      "successRate": 39.89,
-      "cancelRate": 32.96
+      "arrivalRate": 67.0,
+      "successRate": 39.9,
+      "cancelRate": 33.0
     },
     {
       "city": "成都",
       "orders": 311,
-      "arrivalRate": 62.06,
-      "successRate": 38.59,
-      "cancelRate": 37.94
+      "arrivalRate": 62.1,
+      "successRate": 38.6,
+      "cancelRate": 37.9
     },
     {
       "city": "重庆",
       "orders": 299,
-      "arrivalRate": 63.88,
+      "arrivalRate": 63.9,
       "successRate": 39.8,
-      "cancelRate": 36.12
+      "cancelRate": 36.1
     },
     {
       "city": "苏州",
       "orders": 295,
-      "arrivalRate": 68.47,
+      "arrivalRate": 68.5,
       "successRate": 40.0,
-      "cancelRate": 31.53
+      "cancelRate": 31.5
     },
     {
       "city": "北京",
       "orders": 261,
-      "arrivalRate": 53.26,
-      "successRate": 26.05,
-      "cancelRate": 46.74
+      "arrivalRate": 53.3,
+      "successRate": 26.1,
+      "cancelRate": 46.7
     },
     {
       "city": "杭州",
       "orders": 240,
       "arrivalRate": 65.0,
-      "successRate": 40.83,
+      "successRate": 40.8,
       "cancelRate": 35.0
     },
     {
       "city": "天津",
       "orders": 220,
-      "arrivalRate": 60.91,
-      "successRate": 32.73,
-      "cancelRate": 39.09
+      "arrivalRate": 60.9,
+      "successRate": 32.7,
+      "cancelRate": 39.1
     },
     {
       "city": "深圳",
       "orders": 215,
-      "arrivalRate": 68.84,
-      "successRate": 38.14,
-      "cancelRate": 31.16
+      "arrivalRate": 68.8,
+      "successRate": 38.1,
+      "cancelRate": 31.2
     },
     {
       "city": "西安",
@@ -1981,159 +1660,165 @@ var CHANNEL_CITY = {
       "arrivalRate": 60.2,
       "successRate": 35.2,
       "cancelRate": 39.8
+    },
+    {
+      "city": "佛山",
+      "orders": 186,
+      "arrivalRate": 66.7,
+      "successRate": 36.0,
+      "cancelRate": 33.3
+    },
+    {
+      "city": "贵阳",
+      "orders": 174,
+      "arrivalRate": 70.7,
+      "successRate": 43.1,
+      "cancelRate": 29.3
+    },
+    {
+      "city": "长沙",
+      "orders": 172,
+      "arrivalRate": 59.9,
+      "successRate": 39.0,
+      "cancelRate": 40.1
+    },
+    {
+      "city": "东莞",
+      "orders": 166,
+      "arrivalRate": 63.9,
+      "successRate": 38.0,
+      "cancelRate": 36.1
+    },
+    {
+      "city": "宁波",
+      "orders": 144,
+      "arrivalRate": 62.5,
+      "successRate": 39.6,
+      "cancelRate": 37.5
     }
   ],
   "创启鑫业": [
     {
       "city": "成都",
       "orders": 128,
-      "arrivalRate": 44.53,
-      "successRate": 21.88,
-      "cancelRate": 55.47
+      "arrivalRate": 44.5,
+      "successRate": 21.9,
+      "cancelRate": 55.5
     },
     {
       "city": "西安",
       "orders": 119,
-      "arrivalRate": 44.54,
-      "successRate": 16.81,
-      "cancelRate": 55.46
+      "arrivalRate": 44.5,
+      "successRate": 16.8,
+      "cancelRate": 55.5
     },
     {
       "city": "天津",
       "orders": 110,
-      "arrivalRate": 39.09,
-      "successRate": 16.36,
-      "cancelRate": 60.91
+      "arrivalRate": 39.1,
+      "successRate": 16.4,
+      "cancelRate": 60.9
     },
     {
       "city": "苏州",
       "orders": 101,
       "arrivalRate": 50.5,
-      "successRate": 24.75,
+      "successRate": 24.8,
       "cancelRate": 49.5
     },
     {
       "city": "贵阳",
       "orders": 94,
       "arrivalRate": 50.0,
-      "successRate": 22.34,
+      "successRate": 22.3,
       "cancelRate": 50.0
     },
     {
       "city": "太原",
       "orders": 91,
-      "arrivalRate": 43.96,
-      "successRate": 14.29,
-      "cancelRate": 56.04
+      "arrivalRate": 44.0,
+      "successRate": 14.3,
+      "cancelRate": 56.0
     },
     {
       "city": "沈阳",
       "orders": 89,
-      "arrivalRate": 65.17,
-      "successRate": 34.83,
-      "cancelRate": 34.83
+      "arrivalRate": 65.2,
+      "successRate": 34.8,
+      "cancelRate": 34.8
     },
     {
       "city": "上海",
       "orders": 87,
-      "arrivalRate": 34.48,
-      "successRate": 10.34,
-      "cancelRate": 65.52
+      "arrivalRate": 34.5,
+      "successRate": 10.3,
+      "cancelRate": 65.5
     },
     {
       "city": "重庆",
       "orders": 86,
-      "arrivalRate": 51.16,
-      "successRate": 22.09,
-      "cancelRate": 48.84
+      "arrivalRate": 51.2,
+      "successRate": 22.1,
+      "cancelRate": 48.8
     },
     {
       "city": "武汉",
       "orders": 81,
-      "arrivalRate": 48.15,
-      "successRate": 22.22,
-      "cancelRate": 51.85
-    }
-  ],
-  "顾家修网络": [
+      "arrivalRate": 48.1,
+      "successRate": 22.2,
+      "cancelRate": 51.9
+    },
     {
-      "city": "雅安",
-      "orders": 7,
-      "arrivalRate": 100.0,
-      "successRate": 71.43,
-      "cancelRate": 0.0
+      "city": "广州",
+      "orders": 78,
+      "arrivalRate": 50.0,
+      "successRate": 19.2,
+      "cancelRate": 50.0
+    },
+    {
+      "city": "郑州",
+      "orders": 78,
+      "arrivalRate": 41.0,
+      "successRate": 12.8,
+      "cancelRate": 59.0
+    },
+    {
+      "city": "北京",
+      "orders": 77,
+      "arrivalRate": 46.8,
+      "successRate": 19.5,
+      "cancelRate": 53.2
+    },
+    {
+      "city": "深圳",
+      "orders": 75,
+      "arrivalRate": 45.3,
+      "successRate": 12.0,
+      "cancelRate": 54.7
+    },
+    {
+      "city": "石家庄",
+      "orders": 73,
+      "arrivalRate": 34.2,
+      "successRate": 6.8,
+      "cancelRate": 65.8
     }
   ],
+  "顾家修网络": [],
   "南明翊耀": [
     {
       "city": "成都",
       "orders": 47,
-      "arrivalRate": 65.96,
-      "successRate": 34.04,
-      "cancelRate": 34.04
+      "arrivalRate": 66.0,
+      "successRate": 34.0,
+      "cancelRate": 34.0
     },
     {
       "city": "重庆",
       "orders": 42,
-      "arrivalRate": 73.81,
-      "successRate": 28.57,
-      "cancelRate": 26.19
-    },
-    {
-      "city": "广州",
-      "orders": 27,
-      "arrivalRate": 85.19,
-      "successRate": 55.56,
-      "cancelRate": 14.81
-    },
-    {
-      "city": "武汉",
-      "orders": 27,
-      "arrivalRate": 66.67,
-      "successRate": 29.63,
-      "cancelRate": 33.33
-    },
-    {
-      "city": "天津",
-      "orders": 24,
-      "arrivalRate": 79.17,
-      "successRate": 50.0,
-      "cancelRate": 20.83
-    },
-    {
-      "city": "深圳",
-      "orders": 23,
-      "arrivalRate": 60.87,
-      "successRate": 39.13,
-      "cancelRate": 39.13
-    },
-    {
-      "city": "长沙",
-      "orders": 22,
-      "arrivalRate": 36.36,
-      "successRate": 13.64,
-      "cancelRate": 63.64
-    },
-    {
-      "city": "合肥",
-      "orders": 19,
-      "arrivalRate": 57.89,
-      "successRate": 31.58,
-      "cancelRate": 42.11
-    },
-    {
-      "city": "杭州",
-      "orders": 18,
-      "arrivalRate": 72.22,
-      "successRate": 50.0,
-      "cancelRate": 27.78
-    },
-    {
-      "city": "贵阳",
-      "orders": 17,
-      "arrivalRate": 64.71,
-      "successRate": 29.41,
-      "cancelRate": 35.29
+      "arrivalRate": 73.8,
+      "successRate": 28.6,
+      "cancelRate": 26.2
     }
   ],
   "赢一把就睡觉": [],
@@ -2142,437 +1827,223 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 429,
-      "arrivalRate": 47.32,
-      "successRate": 19.81,
-      "cancelRate": 52.68
+      "arrivalRate": 47.3,
+      "successRate": 19.8,
+      "cancelRate": 52.7
     },
     {
       "city": "东莞",
       "orders": 364,
-      "arrivalRate": 50.27,
-      "successRate": 20.05,
-      "cancelRate": 49.73
+      "arrivalRate": 50.3,
+      "successRate": 20.1,
+      "cancelRate": 49.7
     },
     {
       "city": "重庆",
       "orders": 308,
-      "arrivalRate": 54.22,
-      "successRate": 24.03,
-      "cancelRate": 45.78
+      "arrivalRate": 54.2,
+      "successRate": 24.0,
+      "cancelRate": 45.8
     },
     {
       "city": "天津",
       "orders": 300,
-      "arrivalRate": 41.67,
+      "arrivalRate": 41.7,
       "successRate": 17.0,
-      "cancelRate": 58.33
+      "cancelRate": 58.3
     },
     {
       "city": "贵阳",
       "orders": 293,
-      "arrivalRate": 51.88,
-      "successRate": 21.16,
-      "cancelRate": 48.12
+      "arrivalRate": 51.9,
+      "successRate": 21.2,
+      "cancelRate": 48.1
     },
     {
       "city": "上海",
       "orders": 292,
-      "arrivalRate": 44.86,
-      "successRate": 18.84,
-      "cancelRate": 55.14
+      "arrivalRate": 44.9,
+      "successRate": 18.8,
+      "cancelRate": 55.1
     },
     {
       "city": "广州",
       "orders": 289,
-      "arrivalRate": 55.36,
-      "successRate": 19.38,
-      "cancelRate": 44.64
+      "arrivalRate": 55.4,
+      "successRate": 19.4,
+      "cancelRate": 44.6
     },
     {
       "city": "西安",
       "orders": 279,
       "arrivalRate": 49.1,
-      "successRate": 21.51,
+      "successRate": 21.5,
       "cancelRate": 50.9
     },
     {
       "city": "苏州",
       "orders": 278,
       "arrivalRate": 51.8,
-      "successRate": 20.86,
+      "successRate": 20.9,
       "cancelRate": 48.2
     },
     {
       "city": "深圳",
       "orders": 256,
-      "arrivalRate": 50.39,
-      "successRate": 22.27,
-      "cancelRate": 49.61
-    }
-  ],
-  "深圳血之缘公益": [],
-  "维修客": [
-    {
-      "city": "广州",
-      "orders": 12,
-      "arrivalRate": 75.0,
-      "successRate": 50.0,
-      "cancelRate": 25.0
-    },
-    {
-      "city": "成都",
-      "orders": 11,
-      "arrivalRate": 81.82,
-      "successRate": 36.36,
-      "cancelRate": 18.18
-    },
-    {
-      "city": "苏州",
-      "orders": 11,
-      "arrivalRate": 27.27,
-      "successRate": 27.27,
-      "cancelRate": 72.73
-    },
-    {
-      "city": "武汉",
-      "orders": 9,
-      "arrivalRate": 55.56,
-      "successRate": 22.22,
-      "cancelRate": 44.44
-    },
-    {
-      "city": "上海",
-      "orders": 8,
-      "arrivalRate": 87.5,
-      "successRate": 25.0,
-      "cancelRate": 12.5
+      "arrivalRate": 50.4,
+      "successRate": 22.3,
+      "cancelRate": 49.6
     },
     {
       "city": "北京",
-      "orders": 7,
-      "arrivalRate": 57.14,
-      "successRate": 42.86,
-      "cancelRate": 42.86
+      "orders": 246,
+      "arrivalRate": 48.0,
+      "successRate": 19.5,
+      "cancelRate": 52.0
     },
     {
-      "city": "长沙",
-      "orders": 7,
-      "arrivalRate": 42.86,
-      "successRate": 14.29,
-      "cancelRate": 57.14
-    },
-    {
-      "city": "重庆",
-      "orders": 6,
-      "arrivalRate": 66.67,
-      "successRate": 50.0,
-      "cancelRate": 33.33
-    },
-    {
-      "city": "大连",
-      "orders": 5,
-      "arrivalRate": 80.0,
-      "successRate": 40.0,
-      "cancelRate": 20.0
-    },
-    {
-      "city": "济南",
-      "orders": 5,
+      "city": "乌鲁木齐",
+      "orders": 230,
       "arrivalRate": 40.0,
-      "successRate": 40.0,
+      "successRate": 23.5,
       "cancelRate": 60.0
-    }
-  ],
-  "智之屋": [],
-  "南充双林家电": [
-    {
-      "city": "成都",
-      "orders": 17,
-      "arrivalRate": 64.71,
-      "successRate": 41.18,
-      "cancelRate": 35.29
-    },
-    {
-      "city": "天津",
-      "orders": 16,
-      "arrivalRate": 56.25,
-      "successRate": 37.5,
-      "cancelRate": 43.75
-    },
-    {
-      "city": "西安",
-      "orders": 14,
-      "arrivalRate": 57.14,
-      "successRate": 42.86,
-      "cancelRate": 42.86
     },
     {
       "city": "武汉",
-      "orders": 14,
-      "arrivalRate": 71.43,
-      "successRate": 50.0,
-      "cancelRate": 28.57
-    },
-    {
-      "city": "广州",
-      "orders": 13,
-      "arrivalRate": 76.92,
-      "successRate": 46.15,
-      "cancelRate": 23.08
-    },
-    {
-      "city": "深圳",
-      "orders": 11,
-      "arrivalRate": 72.73,
-      "successRate": 63.64,
-      "cancelRate": 27.27
-    },
-    {
-      "city": "太原",
-      "orders": 10,
-      "arrivalRate": 50.0,
-      "successRate": 0.0,
-      "cancelRate": 50.0
-    },
-    {
-      "city": "佛山",
-      "orders": 10,
-      "arrivalRate": 60.0,
-      "successRate": 50.0,
-      "cancelRate": 40.0
-    },
-    {
-      "city": "贵阳",
-      "orders": 8,
-      "arrivalRate": 87.5,
-      "successRate": 62.5,
-      "cancelRate": 12.5
-    },
-    {
-      "city": "北京",
-      "orders": 8,
-      "arrivalRate": 62.5,
-      "successRate": 37.5,
-      "cancelRate": 37.5
-    }
-  ],
-  "深圳爱博绿": [],
-  "卓翰到家": [
-    {
-      "city": "深圳",
-      "orders": 13,
-      "arrivalRate": 61.54,
-      "successRate": 30.77,
-      "cancelRate": 38.46
-    },
-    {
-      "city": "重庆",
-      "orders": 13,
-      "arrivalRate": 53.85,
-      "successRate": 30.77,
-      "cancelRate": 46.15
-    },
-    {
-      "city": "佛山",
-      "orders": 9,
-      "arrivalRate": 66.67,
-      "successRate": 44.44,
-      "cancelRate": 33.33
-    },
-    {
-      "city": "成都",
-      "orders": 8,
-      "arrivalRate": 62.5,
-      "successRate": 12.5,
-      "cancelRate": 37.5
-    },
-    {
-      "city": "广州",
-      "orders": 8,
-      "arrivalRate": 62.5,
-      "successRate": 37.5,
-      "cancelRate": 37.5
-    },
-    {
-      "city": "北京",
-      "orders": 6,
-      "arrivalRate": 33.33,
-      "successRate": 0.0,
-      "cancelRate": 66.67
+      "orders": 206,
+      "arrivalRate": 55.8,
+      "successRate": 28.6,
+      "cancelRate": 44.2
     },
     {
       "city": "杭州",
-      "orders": 6,
-      "arrivalRate": 83.33,
-      "successRate": 50.0,
-      "cancelRate": 16.67
+      "orders": 196,
+      "arrivalRate": 56.1,
+      "successRate": 20.4,
+      "cancelRate": 43.9
     },
     {
-      "city": "上海",
-      "orders": 5,
-      "arrivalRate": 100.0,
-      "successRate": 60.0,
-      "cancelRate": 0.0
-    },
-    {
-      "city": "福州",
-      "orders": 5,
-      "arrivalRate": 60.0,
-      "successRate": 20.0,
-      "cancelRate": 40.0
-    },
-    {
-      "city": "厦门",
-      "orders": 5,
-      "arrivalRate": 60.0,
-      "successRate": 20.0,
-      "cancelRate": 40.0
+      "city": "长沙",
+      "orders": 191,
+      "arrivalRate": 47.6,
+      "successRate": 22.0,
+      "cancelRate": 52.4
     }
   ],
+  "深圳血之缘公益": [],
+  "维修客": [],
+  "智之屋": [],
+  "南充双林家电": [],
+  "深圳爱博绿": [],
+  "卓翰到家": [],
   "我唱": [
     {
       "city": "成都",
       "orders": 124,
-      "arrivalRate": 44.35,
-      "successRate": 16.13,
-      "cancelRate": 55.65
+      "arrivalRate": 44.4,
+      "successRate": 16.1,
+      "cancelRate": 55.6
     },
     {
       "city": "重庆",
       "orders": 104,
-      "arrivalRate": 55.77,
+      "arrivalRate": 55.8,
       "successRate": 25.0,
-      "cancelRate": 44.23
+      "cancelRate": 44.2
     },
     {
       "city": "东莞",
       "orders": 96,
-      "arrivalRate": 35.42,
-      "successRate": 16.67,
-      "cancelRate": 64.58
+      "arrivalRate": 35.4,
+      "successRate": 16.7,
+      "cancelRate": 64.6
     },
     {
       "city": "苏州",
       "orders": 95,
-      "arrivalRate": 43.16,
-      "successRate": 23.16,
-      "cancelRate": 56.84
+      "arrivalRate": 43.2,
+      "successRate": 23.2,
+      "cancelRate": 56.8
     },
     {
       "city": "深圳",
       "orders": 93,
-      "arrivalRate": 49.46,
-      "successRate": 22.58,
-      "cancelRate": 50.54
+      "arrivalRate": 49.5,
+      "successRate": 22.6,
+      "cancelRate": 50.5
     },
     {
       "city": "广州",
       "orders": 81,
-      "arrivalRate": 43.21,
-      "successRate": 13.58,
-      "cancelRate": 56.79
+      "arrivalRate": 43.2,
+      "successRate": 13.6,
+      "cancelRate": 56.8
     },
     {
       "city": "西安",
       "orders": 81,
-      "arrivalRate": 49.38,
-      "successRate": 20.99,
-      "cancelRate": 50.62
+      "arrivalRate": 49.4,
+      "successRate": 21.0,
+      "cancelRate": 50.6
     },
     {
       "city": "贵阳",
       "orders": 81,
-      "arrivalRate": 59.26,
-      "successRate": 23.46,
-      "cancelRate": 40.74
+      "arrivalRate": 59.3,
+      "successRate": 23.5,
+      "cancelRate": 40.7
     },
     {
       "city": "天津",
       "orders": 78,
-      "arrivalRate": 43.59,
-      "successRate": 23.08,
-      "cancelRate": 56.41
+      "arrivalRate": 43.6,
+      "successRate": 23.1,
+      "cancelRate": 56.4
     },
     {
       "city": "杭州",
       "orders": 73,
-      "arrivalRate": 56.16,
-      "successRate": 24.66,
-      "cancelRate": 43.84
-    }
-  ],
-  "求智科技": [
-    {
-      "city": "成都",
-      "orders": 17,
-      "arrivalRate": 58.82,
-      "successRate": 35.29,
-      "cancelRate": 41.18
+      "arrivalRate": 56.2,
+      "successRate": 24.7,
+      "cancelRate": 43.8
     },
     {
       "city": "上海",
-      "orders": 16,
-      "arrivalRate": 62.5,
-      "successRate": 31.25,
-      "cancelRate": 37.5
+      "orders": 71,
+      "arrivalRate": 50.7,
+      "successRate": 16.9,
+      "cancelRate": 49.3
     },
     {
-      "city": "佛山",
-      "orders": 15,
-      "arrivalRate": 73.33,
-      "successRate": 46.67,
-      "cancelRate": 26.67
+      "city": "兰州",
+      "orders": 64,
+      "arrivalRate": 53.1,
+      "successRate": 29.7,
+      "cancelRate": 46.9
     },
     {
-      "city": "重庆",
-      "orders": 15,
-      "arrivalRate": 53.33,
-      "successRate": 33.33,
-      "cancelRate": 46.67
+      "city": "昆明",
+      "orders": 64,
+      "arrivalRate": 43.8,
+      "successRate": 17.2,
+      "cancelRate": 56.2
     },
     {
-      "city": "长沙",
-      "orders": 15,
-      "arrivalRate": 60.0,
-      "successRate": 46.67,
-      "cancelRate": 40.0
+      "city": "青岛",
+      "orders": 64,
+      "arrivalRate": 57.8,
+      "successRate": 25.0,
+      "cancelRate": 42.2
     },
     {
       "city": "北京",
-      "orders": 14,
-      "arrivalRate": 42.86,
-      "successRate": 28.57,
-      "cancelRate": 57.14
-    },
-    {
-      "city": "武汉",
-      "orders": 14,
-      "arrivalRate": 92.86,
-      "successRate": 50.0,
-      "cancelRate": 7.14
-    },
-    {
-      "city": "大连",
-      "orders": 14,
-      "arrivalRate": 100.0,
-      "successRate": 64.29,
-      "cancelRate": 0.0
-    },
-    {
-      "city": "沈阳",
-      "orders": 13,
-      "arrivalRate": 92.31,
-      "successRate": 53.85,
-      "cancelRate": 7.69
-    },
-    {
-      "city": "广州",
-      "orders": 13,
-      "arrivalRate": 92.31,
-      "successRate": 61.54,
-      "cancelRate": 7.69
+      "orders": 62,
+      "arrivalRate": 38.7,
+      "successRate": 22.6,
+      "cancelRate": 61.3
     }
   ],
+  "求智科技": [],
   "爱裹回收": [],
   "环球飞宇数码": [],
   "北京然一科技": [],
@@ -2580,72 +2051,9 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 35,
-      "arrivalRate": 51.43,
-      "successRate": 34.29,
-      "cancelRate": 48.57
-    },
-    {
-      "city": "广州",
-      "orders": 26,
-      "arrivalRate": 57.69,
-      "successRate": 42.31,
-      "cancelRate": 42.31
-    },
-    {
-      "city": "重庆",
-      "orders": 25,
-      "arrivalRate": 60.0,
-      "successRate": 28.0,
-      "cancelRate": 40.0
-    },
-    {
-      "city": "东莞",
-      "orders": 24,
-      "arrivalRate": 58.33,
-      "successRate": 20.83,
-      "cancelRate": 41.67
-    },
-    {
-      "city": "深圳",
-      "orders": 18,
-      "arrivalRate": 61.11,
-      "successRate": 33.33,
-      "cancelRate": 38.89
-    },
-    {
-      "city": "苏州",
-      "orders": 13,
-      "arrivalRate": 46.15,
-      "successRate": 23.08,
-      "cancelRate": 53.85
-    },
-    {
-      "city": "武汉",
-      "orders": 13,
-      "arrivalRate": 69.23,
-      "successRate": 23.08,
-      "cancelRate": 30.77
-    },
-    {
-      "city": "郑州",
-      "orders": 11,
-      "arrivalRate": 45.45,
-      "successRate": 18.18,
-      "cancelRate": 54.55
-    },
-    {
-      "city": "长沙",
-      "orders": 10,
-      "arrivalRate": 40.0,
-      "successRate": 30.0,
-      "cancelRate": 60.0
-    },
-    {
-      "city": "昆明",
-      "orders": 10,
-      "arrivalRate": 30.0,
-      "successRate": 20.0,
-      "cancelRate": 70.0
+      "arrivalRate": 51.4,
+      "successRate": 34.3,
+      "cancelRate": 48.6
     }
   ],
   "捷达科技": [],
@@ -2653,44 +2061,44 @@ var CHANNEL_CITY = {
     {
       "city": "成都",
       "orders": 108,
-      "arrivalRate": 67.59,
-      "successRate": 41.67,
-      "cancelRate": 32.41
+      "arrivalRate": 67.6,
+      "successRate": 41.7,
+      "cancelRate": 32.4
     },
     {
       "city": "上海",
       "orders": 73,
-      "arrivalRate": 68.49,
-      "successRate": 32.88,
-      "cancelRate": 31.51
+      "arrivalRate": 68.5,
+      "successRate": 32.9,
+      "cancelRate": 31.5
     },
     {
       "city": "武汉",
       "orders": 68,
-      "arrivalRate": 63.24,
-      "successRate": 36.76,
-      "cancelRate": 36.76
+      "arrivalRate": 63.2,
+      "successRate": 36.8,
+      "cancelRate": 36.8
     },
     {
       "city": "乌鲁木齐",
       "orders": 62,
-      "arrivalRate": 61.29,
-      "successRate": 46.77,
-      "cancelRate": 38.71
+      "arrivalRate": 61.3,
+      "successRate": 46.8,
+      "cancelRate": 38.7
     },
     {
       "city": "重庆",
       "orders": 53,
-      "arrivalRate": 67.92,
-      "successRate": 45.28,
-      "cancelRate": 32.08
+      "arrivalRate": 67.9,
+      "successRate": 45.3,
+      "cancelRate": 32.1
     },
     {
       "city": "北京",
       "orders": 51,
-      "arrivalRate": 66.67,
-      "successRate": 33.33,
-      "cancelRate": 33.33
+      "arrivalRate": 66.7,
+      "successRate": 33.3,
+      "cancelRate": 33.3
     },
     {
       "city": "南京",
@@ -2702,23 +2110,58 @@ var CHANNEL_CITY = {
     {
       "city": "杭州",
       "orders": 46,
-      "arrivalRate": 76.09,
-      "successRate": 45.65,
-      "cancelRate": 23.91
+      "arrivalRate": 76.1,
+      "successRate": 45.7,
+      "cancelRate": 23.9
     },
     {
       "city": "西安",
       "orders": 43,
-      "arrivalRate": 65.12,
-      "successRate": 46.51,
-      "cancelRate": 34.88
+      "arrivalRate": 65.1,
+      "successRate": 46.5,
+      "cancelRate": 34.9
     },
     {
       "city": "苏州",
       "orders": 43,
-      "arrivalRate": 72.09,
-      "successRate": 41.86,
-      "cancelRate": 27.91
+      "arrivalRate": 72.1,
+      "successRate": 41.9,
+      "cancelRate": 27.9
+    },
+    {
+      "city": "石家庄",
+      "orders": 36,
+      "arrivalRate": 61.1,
+      "successRate": 36.1,
+      "cancelRate": 38.9
+    },
+    {
+      "city": "长沙",
+      "orders": 33,
+      "arrivalRate": 54.5,
+      "successRate": 24.2,
+      "cancelRate": 45.5
+    },
+    {
+      "city": "福州",
+      "orders": 32,
+      "arrivalRate": 62.5,
+      "successRate": 34.4,
+      "cancelRate": 37.5
+    },
+    {
+      "city": "广州",
+      "orders": 31,
+      "arrivalRate": 74.2,
+      "successRate": 41.9,
+      "cancelRate": 25.8
+    },
+    {
+      "city": "合肥",
+      "orders": 30,
+      "arrivalRate": 76.7,
+      "successRate": 53.3,
+      "cancelRate": 23.3
     }
   ],
   "泊君科技": [],
@@ -2727,144 +2170,116 @@ var CHANNEL_CITY = {
     {
       "city": "重庆",
       "orders": 32,
-      "arrivalRate": 65.62,
-      "successRate": 31.25,
-      "cancelRate": 34.38
-    },
-    {
-      "city": "北京",
-      "orders": 22,
-      "arrivalRate": 68.18,
-      "successRate": 22.73,
-      "cancelRate": 31.82
-    },
-    {
-      "city": "成都",
-      "orders": 19,
-      "arrivalRate": 47.37,
-      "successRate": 15.79,
-      "cancelRate": 52.63
-    },
-    {
-      "city": "西安",
-      "orders": 18,
-      "arrivalRate": 44.44,
-      "successRate": 38.89,
-      "cancelRate": 55.56
-    },
-    {
-      "city": "郑州",
-      "orders": 16,
-      "arrivalRate": 43.75,
-      "successRate": 18.75,
-      "cancelRate": 56.25
-    },
-    {
-      "city": "贵阳",
-      "orders": 15,
-      "arrivalRate": 80.0,
-      "successRate": 40.0,
-      "cancelRate": 20.0
-    },
-    {
-      "city": "苏州",
-      "orders": 13,
-      "arrivalRate": 53.85,
-      "successRate": 15.38,
-      "cancelRate": 46.15
-    },
-    {
-      "city": "天津",
-      "orders": 12,
-      "arrivalRate": 33.33,
-      "successRate": 8.33,
-      "cancelRate": 66.67
-    },
-    {
-      "city": "长沙",
-      "orders": 12,
-      "arrivalRate": 41.67,
-      "successRate": 16.67,
-      "cancelRate": 58.33
-    },
-    {
-      "city": "深圳",
-      "orders": 10,
-      "arrivalRate": 80.0,
-      "successRate": 40.0,
-      "cancelRate": 20.0
+      "arrivalRate": 65.6,
+      "successRate": 31.2,
+      "cancelRate": 34.4
     }
   ],
   "有祥广告": [
     {
       "city": "成都",
       "orders": 1134,
-      "arrivalRate": 46.74,
-      "successRate": 27.69,
-      "cancelRate": 53.26
+      "arrivalRate": 46.7,
+      "successRate": 27.7,
+      "cancelRate": 53.3
     },
     {
       "city": "东莞",
       "orders": 566,
-      "arrivalRate": 43.29,
-      "successRate": 26.15,
-      "cancelRate": 56.71
+      "arrivalRate": 43.3,
+      "successRate": 26.1,
+      "cancelRate": 56.7
     },
     {
       "city": "重庆",
       "orders": 540,
-      "arrivalRate": 44.81,
-      "successRate": 29.44,
-      "cancelRate": 55.19
+      "arrivalRate": 44.8,
+      "successRate": 29.4,
+      "cancelRate": 55.2
     },
     {
       "city": "苏州",
       "orders": 474,
-      "arrivalRate": 49.37,
-      "successRate": 29.96,
-      "cancelRate": 50.63
+      "arrivalRate": 49.4,
+      "successRate": 30.0,
+      "cancelRate": 50.6
     },
     {
       "city": "广州",
       "orders": 419,
-      "arrivalRate": 47.26,
-      "successRate": 22.67,
-      "cancelRate": 52.74
+      "arrivalRate": 47.3,
+      "successRate": 22.7,
+      "cancelRate": 52.7
     },
     {
       "city": "深圳",
       "orders": 370,
-      "arrivalRate": 49.73,
-      "successRate": 29.73,
-      "cancelRate": 50.27
+      "arrivalRate": 49.7,
+      "successRate": 29.7,
+      "cancelRate": 50.3
     },
     {
       "city": "上海",
       "orders": 336,
-      "arrivalRate": 45.83,
+      "arrivalRate": 45.8,
       "successRate": 25.3,
-      "cancelRate": 54.17
+      "cancelRate": 54.2
     },
     {
       "city": "贵阳",
       "orders": 307,
-      "arrivalRate": 48.21,
-      "successRate": 26.06,
-      "cancelRate": 51.79
+      "arrivalRate": 48.2,
+      "successRate": 26.1,
+      "cancelRate": 51.8
     },
     {
       "city": "天津",
       "orders": 275,
-      "arrivalRate": 41.45,
-      "successRate": 22.55,
-      "cancelRate": 58.55
+      "arrivalRate": 41.5,
+      "successRate": 22.5,
+      "cancelRate": 58.5
     },
     {
       "city": "西安",
       "orders": 254,
-      "arrivalRate": 44.09,
-      "successRate": 24.41,
-      "cancelRate": 55.91
+      "arrivalRate": 44.1,
+      "successRate": 24.4,
+      "cancelRate": 55.9
+    },
+    {
+      "city": "福州",
+      "orders": 251,
+      "arrivalRate": 36.7,
+      "successRate": 20.7,
+      "cancelRate": 63.3
+    },
+    {
+      "city": "长沙",
+      "orders": 235,
+      "arrivalRate": 37.0,
+      "successRate": 21.3,
+      "cancelRate": 63.0
+    },
+    {
+      "city": "杭州",
+      "orders": 228,
+      "arrivalRate": 46.5,
+      "successRate": 25.0,
+      "cancelRate": 53.5
+    },
+    {
+      "city": "北京",
+      "orders": 221,
+      "arrivalRate": 33.5,
+      "successRate": 17.2,
+      "cancelRate": 66.5
+    },
+    {
+      "city": "合肥",
+      "orders": 215,
+      "arrivalRate": 47.4,
+      "successRate": 24.7,
+      "cancelRate": 52.6
     }
   ],
   "北京科达广宏": [],
@@ -2872,72 +2287,93 @@ var CHANNEL_CITY = {
     {
       "city": "上海",
       "orders": 109,
-      "arrivalRate": 55.05,
-      "successRate": 32.11,
-      "cancelRate": 44.95
+      "arrivalRate": 55.0,
+      "successRate": 32.1,
+      "cancelRate": 45.0
     },
     {
       "city": "深圳",
       "orders": 107,
-      "arrivalRate": 63.55,
-      "successRate": 39.25,
-      "cancelRate": 36.45
+      "arrivalRate": 63.6,
+      "successRate": 39.3,
+      "cancelRate": 36.4
     },
     {
       "city": "北京",
       "orders": 101,
-      "arrivalRate": 45.54,
-      "successRate": 20.79,
-      "cancelRate": 54.46
+      "arrivalRate": 45.5,
+      "successRate": 20.8,
+      "cancelRate": 54.5
     },
     {
       "city": "成都",
       "orders": 87,
-      "arrivalRate": 49.43,
-      "successRate": 18.39,
-      "cancelRate": 50.57
+      "arrivalRate": 49.4,
+      "successRate": 18.4,
+      "cancelRate": 50.6
     },
     {
       "city": "杭州",
       "orders": 70,
-      "arrivalRate": 65.71,
-      "successRate": 42.86,
-      "cancelRate": 34.29
+      "arrivalRate": 65.7,
+      "successRate": 42.9,
+      "cancelRate": 34.3
     },
     {
       "city": "广州",
       "orders": 69,
-      "arrivalRate": 60.87,
-      "successRate": 33.33,
-      "cancelRate": 39.13
+      "arrivalRate": 60.9,
+      "successRate": 33.3,
+      "cancelRate": 39.1
     },
     {
       "city": "武汉",
       "orders": 62,
-      "arrivalRate": 56.45,
+      "arrivalRate": 56.5,
       "successRate": 37.1,
-      "cancelRate": 43.55
+      "cancelRate": 43.5
     },
     {
       "city": "长沙",
       "orders": 45,
-      "arrivalRate": 53.33,
-      "successRate": 37.78,
-      "cancelRate": 46.67
+      "arrivalRate": 53.3,
+      "successRate": 37.8,
+      "cancelRate": 46.7
     },
     {
       "city": "苏州",
       "orders": 45,
-      "arrivalRate": 48.89,
-      "successRate": 24.44,
-      "cancelRate": 51.11
+      "arrivalRate": 48.9,
+      "successRate": 24.4,
+      "cancelRate": 51.1
     },
     {
       "city": "重庆",
       "orders": 43,
-      "arrivalRate": 41.86,
-      "successRate": 23.26,
-      "cancelRate": 58.14
+      "arrivalRate": 41.9,
+      "successRate": 23.3,
+      "cancelRate": 58.1
+    },
+    {
+      "city": "西安",
+      "orders": 39,
+      "arrivalRate": 51.3,
+      "successRate": 35.9,
+      "cancelRate": 48.7
+    },
+    {
+      "city": "南京",
+      "orders": 38,
+      "arrivalRate": 76.3,
+      "successRate": 50.0,
+      "cancelRate": 23.7
+    },
+    {
+      "city": "天津",
+      "orders": 30,
+      "arrivalRate": 53.3,
+      "successRate": 23.3,
+      "cancelRate": 46.7
     }
   ],
   "喜家家": [],
@@ -2945,1024 +2381,818 @@ var CHANNEL_CITY = {
     {
       "city": "苏州",
       "orders": 557,
-      "arrivalRate": 55.12,
-      "successRate": 29.62,
-      "cancelRate": 44.88
+      "arrivalRate": 55.1,
+      "successRate": 29.6,
+      "cancelRate": 44.9
     },
     {
       "city": "成都",
       "orders": 506,
-      "arrivalRate": 52.77,
-      "successRate": 30.04,
-      "cancelRate": 47.23
+      "arrivalRate": 52.8,
+      "successRate": 30.0,
+      "cancelRate": 47.2
     },
     {
       "city": "西安",
       "orders": 467,
-      "arrivalRate": 55.25,
-      "successRate": 29.76,
-      "cancelRate": 44.75
+      "arrivalRate": 55.2,
+      "successRate": 29.8,
+      "cancelRate": 44.8
     },
     {
       "city": "乌鲁木齐",
       "orders": 450,
-      "arrivalRate": 45.56,
-      "successRate": 24.22,
-      "cancelRate": 54.44
+      "arrivalRate": 45.6,
+      "successRate": 24.2,
+      "cancelRate": 54.4
     },
     {
       "city": "贵阳",
       "orders": 445,
-      "arrivalRate": 55.06,
-      "successRate": 30.34,
-      "cancelRate": 44.94
+      "arrivalRate": 55.1,
+      "successRate": 30.3,
+      "cancelRate": 44.9
     },
     {
       "city": "重庆",
       "orders": 428,
-      "arrivalRate": 54.67,
-      "successRate": 31.78,
-      "cancelRate": 45.33
+      "arrivalRate": 54.7,
+      "successRate": 31.8,
+      "cancelRate": 45.3
     },
     {
       "city": "深圳",
       "orders": 407,
-      "arrivalRate": 54.79,
-      "successRate": 25.31,
-      "cancelRate": 45.21
+      "arrivalRate": 54.8,
+      "successRate": 25.3,
+      "cancelRate": 45.2
     },
     {
       "city": "天津",
       "orders": 400,
-      "arrivalRate": 47.25,
-      "successRate": 24.75,
-      "cancelRate": 52.75
+      "arrivalRate": 47.2,
+      "successRate": 24.8,
+      "cancelRate": 52.8
     },
     {
       "city": "武汉",
       "orders": 396,
-      "arrivalRate": 55.56,
-      "successRate": 33.84,
-      "cancelRate": 44.44
+      "arrivalRate": 55.6,
+      "successRate": 33.8,
+      "cancelRate": 44.4
     },
     {
       "city": "合肥",
       "orders": 381,
-      "arrivalRate": 54.33,
-      "successRate": 30.97,
-      "cancelRate": 45.67
-    }
-  ],
-  "维修中国": [
-    {
-      "city": "苏州",
-      "orders": 10,
-      "arrivalRate": 80.0,
-      "successRate": 20.0,
-      "cancelRate": 20.0
-    },
-    {
-      "city": "太原",
-      "orders": 8,
-      "arrivalRate": 50.0,
-      "successRate": 25.0,
-      "cancelRate": 50.0
+      "arrivalRate": 54.3,
+      "successRate": 31.0,
+      "cancelRate": 45.7
     },
     {
       "city": "东莞",
-      "orders": 7,
-      "arrivalRate": 85.71,
-      "successRate": 71.43,
-      "cancelRate": 14.29
+      "orders": 364,
+      "arrivalRate": 46.7,
+      "successRate": 20.3,
+      "cancelRate": 53.3
     },
     {
-      "city": "唐山",
-      "orders": 5,
-      "arrivalRate": 80.0,
-      "successRate": 40.0,
-      "cancelRate": 20.0
+      "city": "广州",
+      "orders": 337,
+      "arrivalRate": 52.2,
+      "successRate": 24.3,
+      "cancelRate": 47.8
     },
     {
-      "city": "合肥",
-      "orders": 5,
-      "arrivalRate": 80.0,
-      "successRate": 20.0,
-      "cancelRate": 20.0
+      "city": "昆明",
+      "orders": 336,
+      "arrivalRate": 58.9,
+      "successRate": 35.4,
+      "cancelRate": 41.1
+    },
+    {
+      "city": "太原",
+      "orders": 325,
+      "arrivalRate": 48.6,
+      "successRate": 25.2,
+      "cancelRate": 51.4
+    },
+    {
+      "city": "长沙",
+      "orders": 311,
+      "arrivalRate": 51.1,
+      "successRate": 30.9,
+      "cancelRate": 48.9
     }
   ],
+  "维修中国": [],
   "114": [
     {
       "city": "重庆",
       "orders": 331,
-      "arrivalRate": 67.98,
-      "successRate": 46.53,
-      "cancelRate": 32.02
+      "arrivalRate": 68.0,
+      "successRate": 46.5,
+      "cancelRate": 32.0
     },
     {
       "city": "武汉",
       "orders": 323,
-      "arrivalRate": 69.35,
-      "successRate": 46.75,
-      "cancelRate": 30.65
+      "arrivalRate": 69.3,
+      "successRate": 46.7,
+      "cancelRate": 30.7
     },
     {
       "city": "广州",
       "orders": 229,
-      "arrivalRate": 76.42,
-      "successRate": 48.47,
-      "cancelRate": 23.58
+      "arrivalRate": 76.4,
+      "successRate": 48.5,
+      "cancelRate": 23.6
     },
     {
       "city": "贵阳",
       "orders": 191,
-      "arrivalRate": 79.06,
-      "successRate": 50.79,
-      "cancelRate": 20.94
+      "arrivalRate": 79.1,
+      "successRate": 50.8,
+      "cancelRate": 20.9
     },
     {
       "city": "福州",
       "orders": 151,
-      "arrivalRate": 63.58,
-      "successRate": 43.05,
-      "cancelRate": 36.42
+      "arrivalRate": 63.6,
+      "successRate": 43.0,
+      "cancelRate": 36.4
     },
     {
       "city": "西安",
       "orders": 143,
-      "arrivalRate": 69.23,
-      "successRate": 44.76,
-      "cancelRate": 30.77
+      "arrivalRate": 69.2,
+      "successRate": 44.8,
+      "cancelRate": 30.8
     },
     {
       "city": "西宁",
       "orders": 89,
-      "arrivalRate": 62.92,
-      "successRate": 37.08,
-      "cancelRate": 37.08
+      "arrivalRate": 62.9,
+      "successRate": 37.1,
+      "cancelRate": 37.1
     },
     {
       "city": "佛山",
       "orders": 45,
-      "arrivalRate": 84.44,
-      "successRate": 55.56,
-      "cancelRate": 15.56
+      "arrivalRate": 84.4,
+      "successRate": 55.6,
+      "cancelRate": 15.6
     },
     {
       "city": "珠海",
       "orders": 38,
-      "arrivalRate": 73.68,
-      "successRate": 44.74,
-      "cancelRate": 26.32
-    },
-    {
-      "city": "遵义",
-      "orders": 24,
-      "arrivalRate": 75.0,
-      "successRate": 41.67,
-      "cancelRate": 25.0
+      "arrivalRate": 73.7,
+      "successRate": 44.7,
+      "cancelRate": 26.3
     }
   ],
   "天鹅到家": [
     {
       "city": "上海",
       "orders": 232,
-      "arrivalRate": 78.88,
-      "successRate": 70.69,
-      "cancelRate": 21.12
+      "arrivalRate": 78.9,
+      "successRate": 70.7,
+      "cancelRate": 21.1
     },
     {
       "city": "北京",
       "orders": 189,
       "arrivalRate": 74.6,
-      "successRate": 59.79,
+      "successRate": 59.8,
       "cancelRate": 25.4
     },
     {
       "city": "杭州",
       "orders": 137,
-      "arrivalRate": 78.83,
-      "successRate": 73.72,
-      "cancelRate": 21.17
+      "arrivalRate": 78.8,
+      "successRate": 73.7,
+      "cancelRate": 21.2
     },
     {
       "city": "深圳",
       "orders": 116,
-      "arrivalRate": 83.62,
-      "successRate": 67.24,
-      "cancelRate": 16.38
+      "arrivalRate": 83.6,
+      "successRate": 67.2,
+      "cancelRate": 16.4
     },
     {
       "city": "南京",
       "orders": 111,
-      "arrivalRate": 84.68,
-      "successRate": 76.58,
-      "cancelRate": 15.32
+      "arrivalRate": 84.7,
+      "successRate": 76.6,
+      "cancelRate": 15.3
     },
     {
       "city": "广州",
       "orders": 105,
       "arrivalRate": 78.1,
-      "successRate": 68.57,
+      "successRate": 68.6,
       "cancelRate": 21.9
     },
     {
       "city": "天津",
       "orders": 87,
-      "arrivalRate": 78.16,
-      "successRate": 70.11,
-      "cancelRate": 21.84
+      "arrivalRate": 78.2,
+      "successRate": 70.1,
+      "cancelRate": 21.8
     },
     {
       "city": "成都",
       "orders": 65,
-      "arrivalRate": 72.31,
-      "successRate": 61.54,
-      "cancelRate": 27.69
+      "arrivalRate": 72.3,
+      "successRate": 61.5,
+      "cancelRate": 27.7
     },
     {
       "city": "长沙",
       "orders": 58,
-      "arrivalRate": 74.14,
-      "successRate": 63.79,
-      "cancelRate": 25.86
+      "arrivalRate": 74.1,
+      "successRate": 63.8,
+      "cancelRate": 25.9
     },
     {
       "city": "苏州",
       "orders": 48,
-      "arrivalRate": 79.17,
-      "successRate": 66.67,
-      "cancelRate": 20.83
+      "arrivalRate": 79.2,
+      "successRate": 66.7,
+      "cancelRate": 20.8
+    },
+    {
+      "city": "西安",
+      "orders": 43,
+      "arrivalRate": 83.7,
+      "successRate": 65.1,
+      "cancelRate": 16.3
+    },
+    {
+      "city": "济南",
+      "orders": 43,
+      "arrivalRate": 83.7,
+      "successRate": 72.1,
+      "cancelRate": 16.3
+    },
+    {
+      "city": "福州",
+      "orders": 40,
+      "arrivalRate": 87.5,
+      "successRate": 75.0,
+      "cancelRate": 12.5
+    },
+    {
+      "city": "重庆",
+      "orders": 37,
+      "arrivalRate": 64.9,
+      "successRate": 51.4,
+      "cancelRate": 35.1
+    },
+    {
+      "city": "沈阳",
+      "orders": 34,
+      "arrivalRate": 91.2,
+      "successRate": 79.4,
+      "cancelRate": 8.8
     }
   ],
   "58同城": [],
   "家政帮": [],
-  "时时特": [
-    {
-      "city": "深圳",
-      "orders": 24,
-      "arrivalRate": 45.83,
-      "successRate": 16.67,
-      "cancelRate": 54.17
-    },
-    {
-      "city": "广州",
-      "orders": 16,
-      "arrivalRate": 31.25,
-      "successRate": 6.25,
-      "cancelRate": 68.75
-    },
-    {
-      "city": "北京",
-      "orders": 15,
-      "arrivalRate": 33.33,
-      "successRate": 26.67,
-      "cancelRate": 66.67
-    },
-    {
-      "city": "杭州",
-      "orders": 13,
-      "arrivalRate": 46.15,
-      "successRate": 23.08,
-      "cancelRate": 53.85
-    },
-    {
-      "city": "上海",
-      "orders": 10,
-      "arrivalRate": 60.0,
-      "successRate": 50.0,
-      "cancelRate": 40.0
-    },
-    {
-      "city": "西安",
-      "orders": 10,
-      "arrivalRate": 40.0,
-      "successRate": 30.0,
-      "cancelRate": 60.0
-    },
-    {
-      "city": "武汉",
-      "orders": 8,
-      "arrivalRate": 25.0,
-      "successRate": 0.0,
-      "cancelRate": 75.0
-    },
-    {
-      "city": "长沙",
-      "orders": 7,
-      "arrivalRate": 0.0,
-      "successRate": 0.0,
-      "cancelRate": 100.0
-    },
-    {
-      "city": "合肥",
-      "orders": 6,
-      "arrivalRate": 100.0,
-      "successRate": 50.0,
-      "cancelRate": 0.0
-    },
-    {
-      "city": "贵阳",
-      "orders": 6,
-      "arrivalRate": 33.33,
-      "successRate": 16.67,
-      "cancelRate": 66.67
-    }
-  ],
+  "时时特": [],
   "甜柚网络": [],
-  "美团": [
-    {
-      "city": "南宁",
-      "orders": 7,
-      "arrivalRate": 100.0,
-      "successRate": 0.0,
-      "cancelRate": 0.0
-    }
-  ],
+  "美团": [],
   "到位": [],
   "立修通": [],
   "吉时雨家政": [
     {
       "city": "成都",
       "orders": 335,
-      "arrivalRate": 41.49,
-      "successRate": 15.82,
-      "cancelRate": 58.51
+      "arrivalRate": 41.5,
+      "successRate": 15.8,
+      "cancelRate": 58.5
     },
     {
       "city": "天津",
       "orders": 282,
-      "arrivalRate": 42.91,
-      "successRate": 18.44,
-      "cancelRate": 57.09
+      "arrivalRate": 42.9,
+      "successRate": 18.4,
+      "cancelRate": 57.1
     },
     {
       "city": "贵阳",
       "orders": 282,
-      "arrivalRate": 48.58,
+      "arrivalRate": 48.6,
       "successRate": 23.4,
-      "cancelRate": 51.42
+      "cancelRate": 51.4
     },
     {
       "city": "上海",
       "orders": 276,
-      "arrivalRate": 49.28,
-      "successRate": 17.39,
-      "cancelRate": 50.72
+      "arrivalRate": 49.3,
+      "successRate": 17.4,
+      "cancelRate": 50.7
     },
     {
       "city": "东莞",
       "orders": 261,
-      "arrivalRate": 51.34,
-      "successRate": 25.67,
-      "cancelRate": 48.66
+      "arrivalRate": 51.3,
+      "successRate": 25.7,
+      "cancelRate": 48.7
     },
     {
       "city": "西安",
       "orders": 258,
-      "arrivalRate": 43.02,
-      "successRate": 16.67,
-      "cancelRate": 56.98
+      "arrivalRate": 43.0,
+      "successRate": 16.7,
+      "cancelRate": 57.0
     },
     {
       "city": "苏州",
       "orders": 251,
-      "arrivalRate": 52.59,
-      "successRate": 21.51,
-      "cancelRate": 47.41
+      "arrivalRate": 52.6,
+      "successRate": 21.5,
+      "cancelRate": 47.4
     },
     {
       "city": "重庆",
       "orders": 225,
-      "arrivalRate": 53.33,
-      "successRate": 24.89,
-      "cancelRate": 46.67
+      "arrivalRate": 53.3,
+      "successRate": 24.9,
+      "cancelRate": 46.7
     },
     {
       "city": "广州",
       "orders": 223,
-      "arrivalRate": 43.95,
-      "successRate": 17.94,
-      "cancelRate": 56.05
+      "arrivalRate": 43.9,
+      "successRate": 17.9,
+      "cancelRate": 56.1
     },
     {
       "city": "杭州",
       "orders": 222,
       "arrivalRate": 50.0,
-      "successRate": 19.37,
+      "successRate": 19.4,
       "cancelRate": 50.0
-    }
-  ],
-  "联创": [
+    },
     {
-      "city": "成都",
-      "orders": 7,
-      "arrivalRate": 85.71,
-      "successRate": 71.43,
-      "cancelRate": 14.29
+      "city": "深圳",
+      "orders": 212,
+      "arrivalRate": 45.8,
+      "successRate": 18.4,
+      "cancelRate": 54.2
+    },
+    {
+      "city": "乌鲁木齐",
+      "orders": 205,
+      "arrivalRate": 36.1,
+      "successRate": 22.4,
+      "cancelRate": 63.9
+    },
+    {
+      "city": "北京",
+      "orders": 199,
+      "arrivalRate": 40.2,
+      "successRate": 12.1,
+      "cancelRate": 59.8
+    },
+    {
+      "city": "武汉",
+      "orders": 192,
+      "arrivalRate": 42.7,
+      "successRate": 20.3,
+      "cancelRate": 57.3
+    },
+    {
+      "city": "太原",
+      "orders": 191,
+      "arrivalRate": 40.3,
+      "successRate": 13.6,
+      "cancelRate": 59.7
     }
   ],
+  "联创": [],
   "闪电修": [],
   "世纪恒通": [],
   "天极网": []
 }
 
 // =================== 渠道产品分布数据 ===================
+// 门槛：单产品订单>=30单，避免小样本干扰
 var CHANNEL_PRODUCT = {
-  "深圳鱼传科技": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
+  "深圳鱼传科技": [],
   "徐州时良家电": [
     {
       "product": "其他",
       "orders": 85,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 43.5,
+      "successRate": 25.9
     }
   ],
-  "邮小哥科技": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
-  "滴滴": [
-    {
-      "product": "其他",
-      "orders": 20,
-      "pct": 100.0
-    }
-  ],
-  "厦门众拍科技": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "邮小哥科技": [],
+  "滴滴": [],
+  "厦门众拍科技": [],
   "小工匠": [
     {
       "product": "其他",
       "orders": 4998,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 55.0,
+      "successRate": 30.3
     }
   ],
   "天杰后勤": [
     {
       "product": "其他",
       "orders": 67,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 77.6,
+      "successRate": 20.9
     }
   ],
   "浔安信息咨询": [
     {
       "product": "其他",
       "orders": 1109,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 54.0,
+      "successRate": 30.3
     }
   ],
-  "猪八戒": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
-  "太原仁杰物业": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "猪八戒": [],
+  "太原仁杰物业": [],
   "亿联科技": [
     {
       "product": "其他",
       "orders": 986,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 76.1,
+      "successRate": 48.9
     }
   ],
-  "湖南希甲": [
-    {
-      "product": "其他",
-      "orders": 3,
-      "pct": 100.0
-    }
-  ],
+  "湖南希甲": [],
   "叶建波": [
     {
       "product": "其他",
       "orders": 386,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 39.6,
+      "successRate": 17.4
     }
   ],
   "太平洋电脑网": [
     {
       "product": "其他",
       "orders": 673,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 73.7,
+      "successRate": 42.8
     }
   ],
-  "追计家电": [
-    {
-      "product": "其他",
-      "orders": 9,
-      "pct": 100.0
-    }
-  ],
-  "TOB业务合作渠道": [
-    {
-      "product": "其他",
-      "orders": 5,
-      "pct": 100.0
-    }
-  ],
-  "长沙合安网络": [
-    {
-      "product": "其他",
-      "orders": 3,
-      "pct": 100.0
-    }
-  ],
-  "美收环保科技": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "追计家电": [],
+  "TOB业务合作渠道": [],
+  "长沙合安网络": [],
+  "美收环保科技": [],
   "宜昌鑫悦网络": [
     {
       "product": "其他",
       "orders": 1299,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 51.4,
+      "successRate": 23.8
     }
   ],
-  "启量智能科技": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "启量智能科技": [],
   "智汇匠心": [
     {
       "product": "其他",
       "orders": 1571,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 52.4,
+      "successRate": 23.4
     }
   ],
-  "宜昌雨墨图书": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
+  "宜昌雨墨图书": [],
   "一诺家电": [
     {
       "product": "其他",
       "orders": 10363,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 48.4,
+      "successRate": 21.8
     }
   ],
-  "家事速配": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
-  "凤凰物业": [
-    {
-      "product": "其他",
-      "orders": 10,
-      "pct": 100.0
-    }
-  ],
-  "北京超级想科技": [
-    {
-      "product": "其他",
-      "orders": 6,
-      "pct": 100.0
-    }
-  ],
+  "家事速配": [],
+  "凤凰物业": [],
+  "北京超级想科技": [],
   "顾友家政": [
     {
       "product": "其他",
       "orders": 79,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 43.0,
+      "successRate": 15.2
     }
   ],
   "诺诺丫百货": [
     {
       "product": "其他",
       "orders": 1049,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 54.1,
+      "successRate": 18.8
     }
   ],
-  "掌上通": [
-    {
-      "product": "其他",
-      "orders": 4,
-      "pct": 100.0
-    }
-  ],
-  "麦乐琪": [
-    {
-      "product": "其他",
-      "orders": 15,
-      "pct": 100.0
-    }
-  ],
-  "山东驰鼎传媒": [
-    {
-      "product": "其他",
-      "orders": 4,
-      "pct": 100.0
-    }
-  ],
-  "杭州优程家政": [
-    {
-      "product": "其他",
-      "orders": 18,
-      "pct": 100.0
-    }
-  ],
-  "广电": [
-    {
-      "product": "其他",
-      "orders": 24,
-      "pct": 100.0
-    }
-  ],
+  "掌上通": [],
+  "麦乐琪": [],
+  "山东驰鼎传媒": [],
+  "杭州优程家政": [],
+  "广电": [],
   "新视点科技": [
     {
       "product": "其他",
       "orders": 50,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 70.0,
+      "successRate": 50.0
     }
   ],
   "宏贵网络": [
     {
       "product": "其他",
       "orders": 1011,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 50.0,
+      "successRate": 20.3
     }
   ],
-  "翰联": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
-  "奇胜信息": [
-    {
-      "product": "其他",
-      "orders": 6,
-      "pct": 100.0
-    }
-  ],
-  "电视台": [
-    {
-      "product": "其他",
-      "orders": 29,
-      "pct": 100.0
-    }
-  ],
+  "翰联": [],
+  "奇胜信息": [],
+  "电视台": [],
   "美琪荣厨": [
     {
       "product": "其他",
       "orders": 419,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 49.6,
+      "successRate": 30.1
     }
   ],
   "佛山灿记家电": [
     {
       "product": "其他",
       "orders": 5836,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 56.7,
+      "successRate": 32.8
     }
   ],
-  "有蜜到家": [
-    {
-      "product": "其他",
-      "orders": 3,
-      "pct": 100.0
-    }
-  ],
+  "有蜜到家": [],
   "武汉亲益冠": [
     {
       "product": "其他",
       "orders": 7846,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 64.5,
+      "successRate": 38.2
     }
   ],
   "创启鑫业": [
     {
       "product": "其他",
       "orders": 3692,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 48.8,
+      "successRate": 22.2
     }
   ],
-  "顾家修网络": [
-    {
-      "product": "其他",
-      "orders": 18,
-      "pct": 100.0
-    }
-  ],
+  "顾家修网络": [],
   "南明翊耀": [
     {
       "product": "其他",
       "orders": 810,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 66.7,
+      "successRate": 37.9
     }
   ],
   "赢一把就睡觉": [
     {
       "product": "其他",
       "orders": 36,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 33.3,
+      "successRate": 13.9
     }
   ],
-  "索菲亚家居": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "索菲亚家居": [],
   "煜志网络": [
     {
       "product": "其他",
       "orders": 10943,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 50.8,
+      "successRate": 22.0
     }
   ],
-  "深圳血之缘公益": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
+  "深圳血之缘公益": [],
   "维修客": [
     {
       "product": "其他",
       "orders": 199,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 67.3,
+      "successRate": 38.7
     }
   ],
-  "智之屋": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
+  "智之屋": [],
   "南充双林家电": [
     {
       "product": "其他",
       "orders": 339,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 64.6,
+      "successRate": 39.5
     }
   ],
-  "深圳爱博绿": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "深圳爱博绿": [],
   "卓翰到家": [
     {
       "product": "其他",
       "orders": 198,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 69.2,
+      "successRate": 43.4
     }
   ],
   "我唱": [
     {
       "product": "其他",
       "orders": 3592,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 48.9,
+      "successRate": 21.5
     }
   ],
   "求智科技": [
     {
       "product": "其他",
       "orders": 499,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 73.1,
+      "successRate": 43.1
     }
   ],
-  "爱裹回收": [
-    {
-      "product": "其他",
-      "orders": 4,
-      "pct": 100.0
-    }
-  ],
+  "爱裹回收": [],
   "环球飞宇数码": [
     {
       "product": "其他",
       "orders": 30,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 60.0,
+      "successRate": 36.7
     }
   ],
-  "北京然一科技": [
-    {
-      "product": "其他",
-      "orders": 2,
-      "pct": 100.0
-    }
-  ],
+  "北京然一科技": [],
   "创亿云科技": [
     {
       "product": "其他",
       "orders": 477,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 49.9,
+      "successRate": 23.7
     }
   ],
-  "捷达科技": [
-    {
-      "product": "其他",
-      "orders": 24,
-      "pct": 100.0
-    }
-  ],
+  "捷达科技": [],
   "智汇云途": [
     {
       "product": "其他",
       "orders": 1860,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 67.7,
+      "successRate": 40.6
     }
   ],
-  "泊君科技": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "泊君科技": [],
   "江诚商贸": [
     {
       "product": "其他",
       "orders": 59,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 47.5,
+      "successRate": 25.4
     }
   ],
   "重庆云序信息": [
     {
       "product": "其他",
       "orders": 433,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 54.5,
+      "successRate": 21.9
     }
   ],
   "有祥广告": [
     {
       "product": "其他",
       "orders": 15059,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 46.9,
+      "successRate": 26.5
     }
   ],
-  "北京科达广宏": [
-    {
-      "product": "其他",
-      "orders": 21,
-      "pct": 100.0
-    }
-  ],
+  "北京科达广宏": [],
   "电脑远程服务项目": [
     {
       "product": "其他",
       "orders": 1447,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 53.4,
+      "successRate": 30.5
     }
   ],
-  "喜家家": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
+  "喜家家": [],
   "宜昌玖源商贸": [
     {
       "product": "其他",
       "orders": 21009,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 54.8,
+      "successRate": 30.7
     }
   ],
   "维修中国": [
     {
       "product": "其他",
       "orders": 146,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 58.9,
+      "successRate": 23.3
     }
   ],
   "114": [
     {
       "product": "其他",
       "orders": 1797,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 71.4,
+      "successRate": 47.5
     }
   ],
   "天鹅到家": [
     {
       "product": "其他",
       "orders": 1806,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 79.3,
+      "successRate": 68.0
     }
   ],
-  "58同城": [
-    {
-      "product": "其他",
-      "orders": 1,
-      "pct": 100.0
-    }
-  ],
-  "家政帮": [
-    {
-      "product": "其他",
-      "orders": 3,
-      "pct": 100.0
-    }
-  ],
+  "58同城": [],
+  "家政帮": [],
   "时时特": [
     {
       "product": "其他",
       "orders": 201,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 37.8,
+      "successRate": 20.4
     }
   ],
   "甜柚网络": [
     {
       "product": "其他",
       "orders": 53,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 69.8,
+      "successRate": 45.3
     }
   ],
   "美团": [
     {
       "product": "其他",
       "orders": 44,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 90.9,
+      "successRate": 11.4
     }
   ],
-  "到位": [
-    {
-      "product": "其他",
-      "orders": 9,
-      "pct": 100.0
-    }
-  ],
-  "立修通": [
-    {
-      "product": "其他",
-      "orders": 4,
-      "pct": 100.0
-    }
-  ],
+  "到位": [],
+  "立修通": [],
   "吉时雨家政": [
     {
       "product": "其他",
       "orders": 9867,
-      "pct": 100.0
+      "pct": 100.0,
+      "arrivalRate": 47.0,
+      "successRate": 21.0
     }
   ],
-  "联创": [
-    {
-      "product": "其他",
-      "orders": 7,
-      "pct": 100.0
-    }
-  ],
-  "闪电修": [
-    {
-      "product": "其他",
-      "orders": 18,
-      "pct": 100.0
-    }
-  ],
-  "世纪恒通": [
-    {
-      "product": "其他",
-      "orders": 7,
-      "pct": 100.0
-    }
-  ],
-  "天极网": [
-    {
-      "product": "其他",
-      "orders": 24,
-      "pct": 100.0
-    }
-  ]
+  "联创": [],
+  "闪电修": [],
+  "世纪恒通": [],
+  "天极网": []
 }
 
 var DAILY = {

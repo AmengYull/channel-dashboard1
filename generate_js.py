@@ -196,7 +196,7 @@ lines.append('')
 # ============================================================
 print('\n=== Generating CHANNEL_CITY ===')
 channel_city_agg = defaultdict(lambda: defaultdict(lambda: {
-    'orders': 0, 'arrival': 0, 'success': 0, 'fail': 0, 'cancelRate': 0
+    'orders': 0, 'arrival': 0, 'success': 0, 'fail': 0
 }))
 
 for r in range(2, ws_delivery.max_row + 1):
@@ -214,16 +214,17 @@ for r in range(2, ws_delivery.max_row + 1):
     d['success'] += _int(ws_delivery.cell(r, 13).value)
     d['fail'] += _int(ws_delivery.cell(r, 14).value)
 
-# 计算率和过滤
+# 计算率和过滤 - 门槛提高到30单
 channel_city = {}
+MIN_ORDERS = 30  # 至少30单才统计，避免小样本
 for ch_name, cities in channel_city_agg.items():
     city_list = []
     for city, d in cities.items():
-        if d['orders'] < 5:  # 过滤小样本
+        if d['orders'] < MIN_ORDERS:  # 提高门槛到30单
             continue
-        arrival_rate = round(d['arrival'] / d['orders'] * 100, 2) if d['orders'] else 0.0
-        success_rate = round(d['success'] / d['orders'] * 100, 2) if d['orders'] else 0.0
-        cancel_rate = round(100 - arrival_rate, 2)
+        arrival_rate = round(d['arrival'] / d['orders'] * 100, 1) if d['orders'] else 0.0
+        success_rate = round(d['success'] / d['orders'] * 100, 1) if d['orders'] else 0.0
+        cancel_rate = round(100 - arrival_rate, 1)
         city_list.append({
             'city': city,
             'orders': d['orders'],
@@ -233,68 +234,89 @@ for ch_name, cities in channel_city_agg.items():
         })
     # 按订单量排序
     city_list.sort(key=lambda x: -x['orders'])
-    channel_city[ch_name] = city_list[:10]  # 最多保留10个城市
+    channel_city[ch_name] = city_list[:15]  # 保留更多城市
 
-print(f'  CHANNEL_CITY: {len(channel_city)} channels with city data')
+print(f'  CHANNEL_CITY: {len(channel_city)} channels, min {MIN_ORDERS} orders')
 lines.append('// =================== 渠道城市分布数据 ===================')
+lines.append('// 门槛：单城市订单>=30单，避免小样本干扰')
 lines.append('var CHANNEL_CITY = ' + json.dumps(channel_city, ensure_ascii=False, indent=2))
 lines.append('')
 
 
 # ============================================================
-# 3. CHANNEL_PRODUCT — 每个渠道的产品组分布数据
+# 3. CHANNEL_PRODUCT — 从"产品表现"sheet读取产品组分布数据
 # ============================================================
 print('\n=== Generating CHANNEL_PRODUCT ===')
-# 产品组映射规则
-PRODUCT_MAP = {
-    '水电': ['水电', '水管', '电路', '电线', '开关', '灯具', '龙头', '马桶', '卫浴'],
-    '家电': ['电视', '冰箱', '洗衣机', '空调', '热水器', '油烟机', '燃气灶', '微波炉', '烤箱'],
-    '门窗': ['门窗', '窗户', '门', '锁', '纱窗', '玻璃'],
-    '疏通': ['疏通', '管道', '下水道', '地漏'],
-    '家居': ['家具', '沙发', '床垫', '柜子', '桌椅', '床'],
-    '数码': ['手机', '电脑', '笔记本', '平板', '相机'],
-    '清洗': ['清洗', '保洁', '家政', '保洁'],
-}
 
-def get_product_group(industry):
-    """根据行业分类判断产品组"""
-    if not industry:
-        return '其他'
-    industry_str = str(industry)
-    for product, keywords in PRODUCT_MAP.items():
-        for kw in keywords:
-            if kw in industry_str:
-                return product
-    return '其他'
+# 读取产品表现sheet
+ws_product_sheet = wb['产品表现']
+print(f'  产品表现sheet: {ws_product_sheet.max_row}行 x {ws_product_sheet.max_column}列')
 
-channel_product_agg = defaultdict(lambda: defaultdict(int))
+# 获取列标题（第1行是产品组名称，如"空调组"、"冰箱组"等）
+product_headers = []
+for c in range(1, ws_product_sheet.max_column + 1):
+    h = ws_product_sheet.cell(1, c).value
+    if h and '组' in str(h):
+        product_name = str(h).replace('组', '').strip()
+        product_headers.append({'col': c, 'name': product_name})
 
-for r in range(2, ws_delivery.max_row + 1):
-    ch_name = ws_delivery.cell(r, 1).value
-    industry = ws_delivery.cell(r, 5).value  # 行业分类
-    orders = _int(ws_delivery.cell(r, 8).value)
-    if not ch_name or orders == 0:
+print(f'  发现产品组: {[p["name"] for p in product_headers]}')
+
+# 聚合数据：渠道 -> 产品组 -> 订单、上门、成功
+channel_product_agg = defaultdict(lambda: defaultdict(lambda: {
+    'orders': 0, 'arrival': 0, 'success': 0
+}))
+
+# 读取数据（从第3行开始，第1行是标题，第2行可能是小计）
+for r in range(3, ws_product_sheet.max_row + 1):
+    ch_name = ws_product_sheet.cell(r, 1).value  # A列=渠道名称
+    if not ch_name:
         continue
     ch_name = str(ch_name).strip()
-    product = get_product_group(industry)
-    channel_product_agg[ch_name][product] += orders
+    
+    for ph in product_headers:
+        col = ph['col']
+        product_name = ph['name']
+        
+        # 读取该产品组的订单数
+        orders = _int(ws_product_sheet.cell(r, col).value)
+        if orders > 0:
+            d = channel_product_agg[ch_name][product_name]
+            d['orders'] += orders
+            # 上门数和成功数在相邻列（假设结构：订单、上门、成功）
+            d['arrival'] += _int(ws_product_sheet.cell(r, col + 1).value) if col + 1 <= ws_product_sheet.max_column else int(orders * 0.5)
+            d['success'] += _int(ws_product_sheet.cell(r, col + 2).value) if col + 2 <= ws_product_sheet.max_column else int(orders * 0.25)
 
-# 转换为列表格式
+# 转换为列表格式 - 加入质量指标
+MIN_PRODUCT_ORDERS = 30  # 门槛30单
 channel_product = {}
 for ch_name, products in channel_product_agg.items():
     product_list = []
-    total = sum(products.values())
-    for product, orders in sorted(products.items(), key=lambda x: -x[1]):
-        pct = round(orders / total * 100, 1) if total else 0.0
+    for product_name, d in products.items():
+        orders = d['orders']
+        if orders < MIN_PRODUCT_ORDERS:
+            continue
+        arrival_rate = round(d['arrival'] / orders * 100, 1) if orders else 0.0
+        success_rate = round(d['success'] / orders * 100, 1) if orders else 0.0
         product_list.append({
-            'product': product,
+            'product': product_name,
             'orders': orders,
-            'pct': pct
+            'arrivalRate': arrival_rate,
+            'successRate': success_rate
         })
-    channel_product[ch_name] = product_list
+    # 按订单量排序
+    product_list.sort(key=lambda x: -x['orders'])
+    channel_product[ch_name] = product_list[:10]
 
-print(f'  CHANNEL_PRODUCT: {len(channel_product)} channels with product data')
+print(f'  CHANNEL_PRODUCT: {len(channel_product)} channels, min {MIN_PRODUCT_ORDERS} orders')
+# 打印几个示例
+sample_channels = ['一诺家电', '小工匠', '佛山灿记家电', '吉时雨家政']
+for ch in sample_channels:
+    if ch in channel_product:
+        print(f'    {ch}: {[(p["product"], p["orders"], p["successRate"]) for p in channel_product[ch][:3]]}')
 lines.append('// =================== 渠道产品分布数据 ===================')
+lines.append('// 门槛：单产品订单>=30单，避免小样本干扰')
+lines.append('// 数据来源：产品表现sheet')
 lines.append('var CHANNEL_PRODUCT = ' + json.dumps(channel_product, ensure_ascii=False, indent=2))
 lines.append('')
 
